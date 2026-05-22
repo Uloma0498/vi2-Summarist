@@ -1,0 +1,17 @@
+import React from 'react';
+
+export default function AuthForm() {
+    return (
+        <div className="auth__wrapper">
+         <div className="auth__content">
+            <div className="auth__title">
+                Log in to Summarist
+            </div>
+         <button className="btn guest__btn--wrapper">
+            
+         </button>
+         </div>
+
+        </div>
+    )
+}

@@ -1,0 +1,30 @@
+import React from 'react';
+import logo from '../assets/logo.png';
+
+const Nav = () => {
+    return (
+        <nav>
+            <div className="nav__wrapper">
+                <a href="/">
+                  <img src="" alt="" className="nav__img" />
+                </a>
+                <ul className="nav__list--wrapper">
+                    <li className="nav__list">
+                        <a href="/">Login</a>
+                    </li>
+                    <li className="nav__list">
+                        <a href="/">About</a>
+                    </li>
+                    <li className="nav__list">
+                        <a href="/">Contact</a>
+                    </li>
+                    <li className="nav__list">
+                        <a href="/">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    )
+}
+
+export default Nav;
