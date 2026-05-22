@@ -71,13 +71,8 @@ const Footer = () => {
                         <a href="/" className="footer__link">Terms of Service</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Privacy Policies</a>
+                        <a href="/" className="footer__link">Contact us</a>
                     </div>
-            </div>
-          </div>
-          <div className="footer__copyright--wrapper">
-            <div className="footer__copyright">
-                Copyright &copy; 2026 Summarist.
             </div>
           </div>
          </div>

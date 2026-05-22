@@ -28,56 +28,51 @@ const Footer = () => {
                 Useful Links
               </h3>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Pricing</a>
+                        <a href="/" className="footer__link">Summarist Magazine</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Summarist Business</a>
+                        <a href="/" className="footer__link">Cancel Subscription</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Gift Cards</a>
+                        <a href="/" className="footer__link">Help</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Authors & Publishers</a>
+                        <a href="/" className="footer__link">Contact us</a>
                     </div>
             </div>
             <div className="footer__block">
               <h3 className="footer__link--title">
-                Company
+                Actions
               </h3>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">About</a>
+                        <a href="/" className="footer__link">Summarist Magazine</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Careers</a>
+                        <a href="/" className="footer__link">Cancel Subscription</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Partners</a>
+                        <a href="/" className="footer__link">Help</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Code of Conduct</a>
+                        <a href="/" className="footer__link">Contact us</a>
                     </div>
             </div>
             <div className="footer__block">
               <h3 className="footer__link--title">
-                Other
+                Actions
               </h3>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Sitemap</a>
+                        <a href="/" className="footer__link">Summarist Magazine</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Legal Notice</a>
+                        <a href="/" className="footer__link">Cancel Subscription</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Terms of Service</a>
+                        <a href="/" className="footer__link">Help</a>
                     </div>
                     <div className="footer__link__wrapper">
-                        <a href="/" className="footer__link">Privacy Policies</a>
+                        <a href="/" className="footer__link">Contact us</a>
                     </div>
-            </div>
-          </div>
-          <div className="footer__copyright--wrapper">
-            <div className="footer__copyright">
-                Copyright &copy; 2026 Summarist.
             </div>
           </div>
          </div>

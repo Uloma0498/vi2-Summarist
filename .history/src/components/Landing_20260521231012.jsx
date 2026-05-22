@@ -8,10 +8,10 @@ const Landing = () => {
             <div className="row">
                 <div className="landing__wrapper">
                     <div className="landing__content">
-                    <h1 className="landing__content__title">
-                        Gain more knowledge <br className="remove--tablet"> in less time </br>
+                    <h1 className="landing__content--title">
+                        Gain more knowledge in less time
                     </h1>
-                    <p className="landing__content__subtitle">
+                    <p className="landing__content--subtitle">
                         Great summaries for busy people, individuals who barely have time to read, and even people who don't like to read.
                     </p>
                     <a href="/">
@@ -20,7 +20,7 @@ const Landing = () => {
                     </button>
                     </a>
                     </div>
-                    <figure className="landing__image--mask">
+                    <figure className="landing__imagg--mask">
                         <img src={landing} alt="Landing" />
                     </figure>
                 </div>
