@@ -13,7 +13,7 @@ const Nav = ({ setIsOpen }) => {
                 </a>
                 <ul className="nav__list--wrapper">
                     <li className="nav__list">
-                        <a href="/" onClick={handleLoginClick}>Login</a>
+                        <a href="/" n>Login</a>
                     </li>
                     <li className="nav__list">
                         <a href="/">About</a>

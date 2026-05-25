@@ -4,10 +4,11 @@ import googleImage from '../src/assets/google.png'
 
 
 const AuthForm = ({ setIsOpen }) => {
-   const handleClose = () => {
+   const handleClose = ()=> {
       setIsOpen(false);
-   }
+   };
    
+
     return (
         <div className="auth__wrapper">
         <div className="auth">

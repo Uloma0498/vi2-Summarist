@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import googleImage from '../src/assets/google.png'
 
 
-const AuthForm = ({ setIsOpen }) => {
-   const handleClose = () => {
+const AuthForm({ setIsOpen }) {
+   const handleClose = ()=> {
       setIsOpen(false);
-   }
+   };
    
+
     return (
         <div className="auth__wrapper">
         <div className="auth">

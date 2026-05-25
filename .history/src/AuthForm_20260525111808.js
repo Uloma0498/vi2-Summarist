@@ -1,13 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React from 'react';
 import googleImage from '../src/assets/google.png'
 
 
-const AuthForm = ({ setIsOpen }) => {
-   const handleClose = () => {
-      setIsOpen(false);
-   }
-   
+export default function AuthForm() {
     return (
         <div className="auth__wrapper">
         <div className="auth">
@@ -23,7 +19,7 @@ const AuthForm = ({ setIsOpen }) => {
             <span className="auth__separator--text">or</span>
          </div>
          <button className="btn google__btn--wrapper">
-            <figure className="google__icon--mask">
+            <figure ">
                <img src={googleImage} alt="Google" className="google__icon--mask" />
             </figure>
             Login with Google
@@ -41,9 +37,8 @@ const AuthForm = ({ setIsOpen }) => {
          </div>
          <div className="auth__forgot--password">Forgot your password?</div>
          <button className="auth__switch--btn">Don't have an account?</button>
-         <FontAwesomeIcon icon="xmark" className="auth__close--btn" onClick={handleClose} />
+         <FontAwesomeIcon icon="xmark" className="auth__close--btn" />
         </div>
         </div>
-    )}
-
-    export default AuthForm;
+    )
+}

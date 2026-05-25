@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifyingGlass);
+library.add(faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifying);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

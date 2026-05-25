@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import googleImage from '../src/assets/google.png'
 
 
-const AuthForm = ({ setIsOpen }) => {
-   const handleClose = () => {
-      setIsOpen(false);
-   }
+export default function AuthForm() {
    
+
     return (
-        <div className="auth__wrapper">
+        <>
+        {isOpen && (<div className="auth__wrapper">
         <div className="auth">
          <div className="auth__content">
             <div className="auth__title">
@@ -41,9 +40,9 @@ const AuthForm = ({ setIsOpen }) => {
          </div>
          <div className="auth__forgot--password">Forgot your password?</div>
          <button className="auth__switch--btn">Don't have an account?</button>
-         <FontAwesomeIcon icon="xmark" className="auth__close--btn" onClick={handleClose} />
+         <FontAwesomeIcon icon="xmark" className="auth__close--btn" onClick={closeForm} />
         </div>
         </div>
     )}
-
-    export default AuthForm;
+    </>
+    )}

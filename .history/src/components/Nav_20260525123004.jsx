@@ -2,9 +2,7 @@ import React from 'react';
 import Navlogo from '../assets/logo.png';
 
 const Nav = ({ setIsOpen }) => {
-    const handleLoginClick = () => {
-        setIsOpen(true);
-    }
+    const handleLoginClick = () =>
     return (
         <nav>
             <div className="nav nav__wrapper">
@@ -13,7 +11,7 @@ const Nav = ({ setIsOpen }) => {
                 </a>
                 <ul className="nav__list--wrapper">
                     <li className="nav__list">
-                        <a href="/" onClick={handleLoginClick}>Login</a>
+                        <a href="/">Login</a>
                     </li>
                     <li className="nav__list">
                         <a href="/">About</a>

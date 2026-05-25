@@ -8,6 +8,7 @@ const AuthForm = ({ setIsOpen }) => {
       setIsOpen(false);
    }
    
+
     return (
         <div className="auth__wrapper">
         <div className="auth">

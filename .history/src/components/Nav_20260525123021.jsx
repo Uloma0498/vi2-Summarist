@@ -3,7 +3,7 @@ import Navlogo from '../assets/logo.png';
 
 const Nav = ({ setIsOpen }) => {
     const handleLoginClick = () => {
-        setIsOpen(true);
+        setIs
     }
     return (
         <nav>
@@ -13,7 +13,7 @@ const Nav = ({ setIsOpen }) => {
                 </a>
                 <ul className="nav__list--wrapper">
                     <li className="nav__list">
-                        <a href="/" onClick={handleLoginClick}>Login</a>
+                        <a href="/">Login</a>
                     </li>
                     <li className="nav__list">
                         <a href="/">About</a>

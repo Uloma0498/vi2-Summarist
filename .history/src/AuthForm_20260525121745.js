@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import googleImage from '../src/assets/google.png'
 
 
-const AuthForm = ({ setIsOpen }) => {
-   const handleClose = () => {
+export default function AuthForm() {
+   const [isOpen, setIsOpen] = useState(true)
+   const closeForm =() => {
       setIsOpen(false);
    }
    
@@ -41,9 +42,8 @@ const AuthForm = ({ setIsOpen }) => {
          </div>
          <div className="auth__forgot--password">Forgot your password?</div>
          <button className="auth__switch--btn">Don't have an account?</button>
-         <FontAwesomeIcon icon="xmark" className="auth__close--btn" onClick={handleClose} />
+         <FontAwesomeIcon icon="xmark" className="auth__close--btn" />
         </div>
         </div>
-    )}
-
-    export default AuthForm;
+    )
+}
