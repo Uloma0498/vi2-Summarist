@@ -1,0 +1,33 @@
+import './App.css';
+import Nav from './components/Nav';
+import Landing from './components/Landing';
+import Features from './components/Features';
+import Reviews from './components/Reviews';
+import Numbers from './components/Numbers';
+import Footer from './components/Footer';
+import AuthForm from './AuthForm';
+import { useState } from 'react';
+import { auth } from "./firebase/init";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
+function App() {
+  const [isOpen, setIsOpen] = useState(true);
+  return (
+    <Router>
+    <div className="App">
+      <Route 
+      <Nav />
+      <Landing />
+      <Features />
+      <Reviews />
+      <Numbers />
+      <Footer />
+      
+      {isOpen && <AuthForm setIsOpen={setIsOpen} />}
+    </div>
+    </Router>
+  )
+}
+
+export default App;
