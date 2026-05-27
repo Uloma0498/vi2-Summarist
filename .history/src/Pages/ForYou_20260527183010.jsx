@@ -79,7 +79,7 @@ const ForYou = () => {
                     <div className="sidebar__link--wrapper sidebar__link--not-allowed">
                     <div className="sidebar__link--line"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="circlequestion"  />    
+                    <FontAwesomeIcon icon=""  />    
                     </div>
                     <div className="sidebar__link--text">Help & Support</div>
                     </div>
@@ -94,6 +94,7 @@ const ForYou = () => {
                   </div>
                 </div>
             </div>
+
           </div>
         </section>
     )

@@ -94,6 +94,7 @@ const ForYou = () => {
                   </div>
                 </div>
             </div>
+            
           </div>
         </section>
     )

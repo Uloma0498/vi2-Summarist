@@ -69,31 +69,18 @@ const ForYou = () => {
                     </div>
                   </div>
                   <div className="sidebar__bottom">
-                    <a className="sidebar__link--wrapper" href="/settings">
+                    <a className="sidebar__link--wrapper" href="/set">
                     <div className="sidebar__link--line"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="gear" />    
+                    <FontAwesomeIcon icon="bookmark" />    
                     </div>
-                    <div className="sidebar__link--text">Settings</div>
+                    <div className="sidebar__link--text">My Library</div>
                     </a>
-                    <div className="sidebar__link--wrapper sidebar__link--not-allowed">
-                    <div className="sidebar__link--line"></div>
-                    <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="circlequestion"  />    
-                    </div>
-                    <div className="sidebar__link--text">Help & Support</div>
-                    </div>
-                    <div className="sidebar__link--wrapper">
-                    <div className="sidebar__link--line"></div>
-                    <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="arrowrightfrombracket"  />    
-                    </div>
-                    <div className="sidebar__link--text">Logout</div>
-                    </div>
                   </div>
                   </div>
                 </div>
             </div>
+
           </div>
         </section>
     )

@@ -79,21 +79,22 @@ const ForYou = () => {
                     <div className="sidebar__link--wrapper sidebar__link--not-allowed">
                     <div className="sidebar__link--line"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="circlequestion"  />    
+                    <FontAwesomeIcon icon="magnifying-glass"  />    
                     </div>
-                    <div className="sidebar__link--text">Help & Support</div>
+                    <div className="sidebar__link--text">Search</div>
                     </div>
                     <div className="sidebar__link--wrapper">
                     <div className="sidebar__link--line"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="arrowrightfrombracket"  />    
+                    <FontAwesomeIcon icon="arrow"  />    
                     </div>
-                    <div className="sidebar__link--text">Logout</div>
+                    <div className="sidebar__link--text">Search</div>
                     </div>
                   </div>
                   </div>
                 </div>
             </div>
+
           </div>
         </section>
     )

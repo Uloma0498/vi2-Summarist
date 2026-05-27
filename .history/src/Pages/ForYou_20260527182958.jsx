@@ -79,7 +79,7 @@ const ForYou = () => {
                     <div className="sidebar__link--wrapper sidebar__link--not-allowed">
                     <div className="sidebar__link--line"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="circlequestion"  />    
+                    <FontAwesomeIcon icon="magnifying-glass"  />    
                     </div>
                     <div className="sidebar__link--text">Help & Support</div>
                     </div>
@@ -88,12 +88,13 @@ const ForYou = () => {
                     <div className="sidebar__icon--wrapper">
                     <FontAwesomeIcon icon="arrowrightfrombracket"  />    
                     </div>
-                    <div className="sidebar__link--text">Logout</div>
+                    <div className="sidebar__link--text"></div>
                     </div>
                   </div>
                   </div>
                 </div>
             </div>
+
           </div>
         </section>
     )

@@ -61,39 +61,17 @@ const ForYou = () => {
                     <div className="sidebar__link--text">Highlights</div>
                     </div>
                     <div className="sidebar__link--wrapper sidebar__link--not-allowed">
-                    <div className="sidebar__link--line"></div>
+                    <div className="sidebar__link--line active--tab"></div>
                     <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="magnifying-glass"  />    
+                    <FontAwesomeIcon icon="pen-clip" />    
                     </div>
                     <div className="sidebar__link--text">Search</div>
-                    </div>
-                  </div>
-                  <div className="sidebar__bottom">
-                    <a className="sidebar__link--wrapper" href="/settings">
-                    <div className="sidebar__link--line"></div>
-                    <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="gear" />    
-                    </div>
-                    <div className="sidebar__link--text">Settings</div>
-                    </a>
-                    <div className="sidebar__link--wrapper sidebar__link--not-allowed">
-                    <div className="sidebar__link--line"></div>
-                    <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="circlequestion"  />    
-                    </div>
-                    <div className="sidebar__link--text">Help & Support</div>
-                    </div>
-                    <div className="sidebar__link--wrapper">
-                    <div className="sidebar__link--line"></div>
-                    <div className="sidebar__icon--wrapper">
-                    <FontAwesomeIcon icon="arrowrightfrombracket"  />    
-                    </div>
-                    <div className="sidebar__link--text">Logout</div>
                     </div>
                   </div>
                   </div>
                 </div>
             </div>
+
           </div>
         </section>
     )
