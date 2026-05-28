@@ -18,6 +18,7 @@ const Landing = ({ setIsOpen }) => {
                     <button className="btn home__cta--btn" onClick={()=> setIsOpen(true)}>
                         Login
                     </button>
+                    </a>
                     </div>
                     <figure className="landing__image--mask">
                         <img src={landing} alt="Landing" />

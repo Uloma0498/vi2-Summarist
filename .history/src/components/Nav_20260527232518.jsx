@@ -10,7 +10,7 @@ const Nav = ({ setIsOpen }) => {
                 </a>
                 <ul className="nav__list--wrapper">
                     <li className="nav__list">
-                        <button onClick={()=> setIsOpen(true)}>Login</button>
+                        <button href="/" onClick={()=> setIsOpen(true)}>Login</button>
                     </li>
                     <li className="nav__list">
                         <a href="/">About</a>
