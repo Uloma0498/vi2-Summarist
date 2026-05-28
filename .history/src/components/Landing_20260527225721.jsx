@@ -16,7 +16,7 @@ const Landing = ({ setIsOpen }) => {
                         Great summaries for busy people, individuals who barely have time to read, and even people who don't like to read.
                     </p>
                     <a href="/">
-                    <button className="btn home__cta--btn" onClick={()=> setIsOpen(true)}>
+                    <button className="btn home__cta--btn" onClick>
                         Login
                     </button>
                     </a>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../components/Nav';
 import Landing from '../components/Landing';
 import Features from '../components/Features';
@@ -7,11 +7,11 @@ import Numbers from '../components/Numbers';
 import Footer from '../components/Footer';
 
 
-const Home = ( { setIsOpen, setIsSignUpOpen }) => {
+const Home = ( { setIsOpen,  }) => {
     return (
         <>
-        <Nav setIsOpen={setIsOpen} />
-        <Landing setIsOpen={setIsOpen} setIsSignUpOpen={setIsSignUpOpen} />
+        <Nav />
+        <Landing setIsOpen={setIsOpen} />
         <Features />
         <Reviews />
         <Numbers />
