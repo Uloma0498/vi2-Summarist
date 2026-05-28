@@ -13,7 +13,7 @@ const SignUp = ({ isOpen, onClose }) => {
 
  const handleSignUp = (e) => {
     e.preventDefault();
-          createUserWithEmailAndPassword(auth, email, password)
+          createUserWithEmailAndPassword(auth, 'email, 'password')
           .then((user) => {
              navigate('/for-you');
           })

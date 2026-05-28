@@ -9,15 +9,15 @@ import ForYou from './Pages/ForYou';
 
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(falase);
   return (
     <Router>
     <div className="App">
       <Routes>
-      <Route path='/signup' element={SignUp} />
-      <Route path='/login' element={SignIn} />
-      <Route path='/for-you' element={ForYou} />
-      <Route path='/' element={Home} />
+      <Route path='/signup' component={SignUp} />
+      <Route path='/login' component={SignIn} />
+      <Route path='/for-you' component={ForYou} />
+      <Route path='/' component={Home} />
       </Routes>
       <Home />
       {isOpen && <SignIn setIsOpen={setIsOpen} />}

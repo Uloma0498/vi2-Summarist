@@ -17,7 +17,7 @@ function App() {
       <Route path='/signup' element={SignUp} />
       <Route path='/login' element={SignIn} />
       <Route path='/for-you' element={ForYou} />
-      <Route path='/' element={Home} />
+      <Route path='/' component={Home} />
       </Routes>
       <Home />
       {isOpen && <SignIn setIsOpen={setIsOpen} />}
