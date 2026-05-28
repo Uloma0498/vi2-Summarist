@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Nav from "../Nav";
-import SignIn from './components/UI/SignIn';
-
+import AuthForm from "../../AuthForm";
+import SignUp from "../../AuthFormUp";
 
 
 const Modal = () => {

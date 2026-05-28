@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import googleImage from '../src/assets/google.png'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/init";
 import AuthFormUp from "./AuthFormUp";
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +19,8 @@ const AuthForm = ({ setIsOpen }) => {
       });
    }, []);
 
-   function login() {
+   const login = (e) => {
+      
       signInWithEmailAndPassword(auth, 'guest@email.com', 'guest123')
       .then(({ user }) => {
          setUser(user);

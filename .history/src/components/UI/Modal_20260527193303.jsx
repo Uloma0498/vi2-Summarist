@@ -3,7 +3,6 @@ import Nav from "../Nav";
 import SignIn from './components/UI/SignIn';
 
 
-
 const Modal = () => {
     const [isOpen, setIsOpen] = useState(false);
 

@@ -1,10 +1,10 @@
 import './App.css';
-import SignIn from './components/UI/SignIn';
+import AuthForm from './AuthForm';
 import { useState } from 'react';
 import { auth } from "./firebase/init";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home';
-import SignUp from './components/UI/SignUp';
+import AuthFormUp from './SignUp';
 import ForYou from './Pages/ForYou';
 
 
@@ -14,13 +14,13 @@ function App() {
     <Router>
     <div className="App">
       <Routes>
-      <Route path='/signup' component={SignUp} />
-      <Route path='/login' component={SignIn} />
+      <Route path='/signup' component={AuthFormUp} />
+      <Route path='/login' component={AuthForm} />
       <Route path='/for-you' component={ForYou} />
       <Route path='/' component={Home} />
       </Routes>
       <Home />
-      {isOpen && <SignIn setIsOpen={setIsOpen} />}
+      {isOpen && <AuthForm setIsOpen={setIsOpen} />}
     </div>
     </Router>
   )

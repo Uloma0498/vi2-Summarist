@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { auth } from "./firebase/init";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home';
-import SignUp from './components/UI/SignUp';
+import SignUp from './SignUp';
 import ForYou from './Pages/ForYou';
 
 
