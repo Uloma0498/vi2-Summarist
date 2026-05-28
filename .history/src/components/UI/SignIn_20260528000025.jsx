@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import googleImage from '../../assets/google.png';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/init";
 import SignUp from './SignUp';
 import { useNavigate } from 'react-router-dom';
 
 
 const SignIn = ({ setIsOpen }) => {
-  const [setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isSignUpOpen, setSignUpOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -89,7 +89,7 @@ const SignIn = ({ setIsOpen }) => {
                    onChange={(e) => setPassword(e.target.value)}
                    required
              />
-            <button className="btn" type="submit">
+            <button className="btn" type>
                Login
             </button>
          </form>

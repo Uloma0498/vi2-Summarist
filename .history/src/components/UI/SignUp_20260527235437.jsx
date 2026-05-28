@@ -14,9 +14,9 @@ const SignUp = ({ isOpen, onClose }) => {
  const handleSignUp = (e) => {
     e.preventDefault();
           createUserWithEmailAndPassword(auth, email, password)
-          .then(() => {
+          .then((user) => {
             onClose();
-            navigate('/for-you');
+             navigate('/for-you');
           })
           .catch((error) => {
              console.log(error);

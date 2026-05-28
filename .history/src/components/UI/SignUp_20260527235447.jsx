@@ -16,7 +16,7 @@ const SignUp = ({ isOpen, onClose }) => {
           createUserWithEmailAndPassword(auth, email, password)
           .then(() => {
             onClose();
-            navigate('/for-you');
+             navigate('/for-you');
           })
           .catch((error) => {
              console.log(error);

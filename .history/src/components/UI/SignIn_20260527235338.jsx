@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import googleImage from '../../assets/google.png';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/init";
 import SignUp from './SignUp';
 import { useNavigate } from 'react-router-dom';
 
 
 const SignIn = ({ setIsOpen }) => {
-  const [setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isSignUpOpen, setSignUpOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +58,7 @@ const SignIn = ({ setIsOpen }) => {
             <div className="auth__title">
                 Log in to Summarist
             </div>
-         <button className="btn guest__btn--wrapper" onClick={loginAsGuest}>
+         <button className="btn guest__btn--wrapper" onClick={loginAs}>
              <FontAwesomeIcon icon="user" className="guest__icon--mask google__icon--mask" />
             Login as a Guest
          </button>
@@ -74,22 +74,10 @@ const SignIn = ({ setIsOpen }) => {
          <div className="auth__separator">
             <span className="auth__separator--text">or</span> 
          </div>
-         <form className="auth__main--form" onSubmit={loginWithEmail}>
-            <input className="auth__main--input" 
-                   type="text" 
-                   placeholder="Email Address"
-                   value={email}
-                   onChange={(e) => setEmail(e.target.value)}
-                   required
-             />
-            <input className="auth__main--input" 
-                   type="password" 
-                   placeholder="Password"
-                   value={password}
-                   onChange={(e) => setPassword(e.target.value)}
-                   required
-             />
-            <button className="btn" type="submit">
+         <form className="auth__main--form">
+            <input className="auth__main--input" type="text" placeholder="Email Address"></input>
+            <input className="auth__main--input" type="password" placeholder="Password"></input>
+            <button className="btn" onClick={login}>
                Login
             </button>
          </form>
