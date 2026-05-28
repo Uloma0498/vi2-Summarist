@@ -1,7 +1,7 @@
 import React from 'react';
 import landing from '../assets/landing.png';
 
-const Landing = ({ setIsOpen }) => {
+const Landing = ({ }) => {
 
     return (
         <section id="landing">

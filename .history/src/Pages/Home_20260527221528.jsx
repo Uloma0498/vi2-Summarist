@@ -8,10 +8,11 @@ import Footer from '../components/Footer';
 
 
 const Home = ( { setIsOpen }) => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
         <Nav />
-        <Landing setIsOpen={setIsOpen} />
+        <Landing {isOpen && <SignIn setIsOpen={setIsOpen} />
         <Features />
         <Reviews />
         <Numbers />

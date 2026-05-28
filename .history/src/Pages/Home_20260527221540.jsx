@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 
 
 const Home = ( { setIsOpen }) => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
         <Nav />

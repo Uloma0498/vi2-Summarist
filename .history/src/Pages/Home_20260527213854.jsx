@@ -7,11 +7,12 @@ import Numbers from '../components/Numbers';
 import Footer from '../components/Footer';
 
 
-const Home = ( { setIsOpen }) => {
+const Home = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
         <Nav />
-        <Landing setIsOpen={setIsOpen} />
+        <Landing />
         <Features />
         <Reviews />
         <Numbers />

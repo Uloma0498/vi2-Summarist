@@ -2,6 +2,9 @@ import React from 'react';
 import Navlogo from '../assets/logo.png';
 
 const Nav = ({ setIsOpen }) => {
+    const handleLoginClick = () => {
+        setIsOpen(true);
+    }
     return (
         <nav>
             <div className="nav nav__wrapper">

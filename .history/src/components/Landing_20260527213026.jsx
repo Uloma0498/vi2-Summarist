@@ -1,7 +1,7 @@
 import React from 'react';
 import landing from '../assets/landing.png';
 
-const Landing = ({ setIsOpen }) => {
+const Landing = () => {
 
     return (
         <section id="landing">
@@ -16,7 +16,7 @@ const Landing = ({ setIsOpen }) => {
                         Great summaries for busy people, individuals who barely have time to read, and even people who don't like to read.
                     </p>
                     <a href="/">
-                    <button className="btn home__cta--btn">
+                    <button className="btn home__cta--btn" onClick={handleLoginClick} >
                         Login
                     </button>
                     </a>

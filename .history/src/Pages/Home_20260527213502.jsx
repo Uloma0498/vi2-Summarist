@@ -5,17 +5,20 @@ import Features from '../components/Features';
 import Reviews from '../components/Reviews';
 import Numbers from '../components/Numbers';
 import Footer from '../components/Footer';
+import SignIn from 
 
 
-const Home = ( { setIsOpen }) => {
+const Home = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
         <Nav />
-        <Landing setIsOpen={setIsOpen} />
+        <Landing />
         <Features />
         <Reviews />
         <Numbers />
         <Footer />
+        {isOpen && <SignIn setIsOpen={setIsOpen} />}
         </>
     )
 }

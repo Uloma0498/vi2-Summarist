@@ -19,7 +19,8 @@ function App() {
       <Route path='/for-you' element={ForYou} />
       <Route path='/' element={Home} />
       </Routes>
-      <Home setIsOpen={setIsOpen} />} />
+      <Home 
+      {isOpen && <SignIn setIsOpen={setIsOpen} />} />
     </div>
     </Router>
   )
