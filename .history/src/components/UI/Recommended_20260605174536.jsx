@@ -22,19 +22,15 @@ const Recommended = () => {
     if(!recommended) return <div>Loading.</div>;
 
     return (
-     <>
+        <>
      <div className="for-you__title">
         Recommended For You
      </div>
      <div className="for-you__sub--title">
         We think you'll like these
      </div>
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     </>
+     <Book />
+        </>
     )
 }
 

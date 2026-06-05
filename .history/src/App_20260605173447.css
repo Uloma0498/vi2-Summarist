@@ -892,8 +892,6 @@ button:disabled {
 }
 
 
-
-
 @media (max-width: 1200px) {
   .selected__book {
         width: 100%;

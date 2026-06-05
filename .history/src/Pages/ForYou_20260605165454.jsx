@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Navlogo from '../assets/logo.png';
 import Selected from "../components/UI/Selected";
-import Recommended from "../components/UI/Recommended";
 
 const ForYou = () => {
     function openMenu() {

@@ -891,7 +891,14 @@ button:disabled {
     height: 16px;
 }
 
-
+.recommended__book--details {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #6b757b;
+}
 
 
 @media (max-width: 1200px) {

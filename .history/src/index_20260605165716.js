@@ -4,9 +4,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifyingGlass, faBars, faPenClip, faBookmark, faHouse, faGear, faCircleQuestion, faArrowRightFromBracket, faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faRegularStar, faClock as faRegularClock } from '@fortawesome/free-regular-svg-icons';
+import { faStar as  } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifyingGlass, faBars, faPenClip, faBookmark, faHouse, faGear, faCircleQuestion, faArrowRightFromBracket, faCirclePlay, faRegularStar, faRegularClock); 
+library.add(faFile, faLightbulb, faMicrophone, faStar, faStarHalfStroke, faCrown, faLeaf, faUser, faXmark, faMagnifyingGlass, faBars, faPenClip, faBookmark, faHouse, faGear, faCircleQuestion, faArrowRightFromBracket, faCirclePlay, faRegularStar); 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

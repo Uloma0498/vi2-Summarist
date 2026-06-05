@@ -22,7 +22,7 @@ const Recommended = () => {
     if(!recommended) return <div>Loading.</div>;
 
     return (
-     <>
+    
      <div className="for-you__title">
         Recommended For You
      </div>

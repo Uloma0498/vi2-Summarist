@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import Book from "./Book";
 
 
 const Recommended = () => {
@@ -22,19 +21,37 @@ const Recommended = () => {
     if(!recommended) return <div>Loading.</div>;
 
     return (
-     <>
+        <>
      <div className="for-you__title">
         Recommended For You
      </div>
      <div className="for-you__sub--title">
         We think you'll like these
      </div>
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     <Book recommended={recommended} />
-     </>
+     <div className="for-you__recommended--books">
+        <a className="for-you__recommended--books-link" href="/">
+        <audio></audio>
+        <figure className="book__image--wrapper">
+            <img className="book__image" src={recommended.imageLink} alt="book" />
+        </figure>
+        <div className="recommended__book--title">
+            {recommended.title}
+        </div>
+        <div className="recommended__book--author">
+            {recommended.author}
+        </div>
+        <div className="recommended__book--sub-title">
+            {recommended.subTitle}
+        </div>
+        <div className="recommended__book--details-wrapper">
+        <div className="recommended__book--details">
+            <div className="recommended"
+            <FontAwesomeIcon icon="fa-solid fa-clock" />
+        </div>
+        </div>
+        </a>
+     </div>
+        </>
     )
 }
 

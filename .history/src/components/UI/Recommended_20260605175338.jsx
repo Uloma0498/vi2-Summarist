@@ -4,7 +4,7 @@ import axios from 'axios';
 import Book from "./Book";
 
 
-const Recommended = () => {
+const Recommended = ( ) => {
     const [recommended, setRecommended] = useState(null)
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const Recommended = () => {
     if(!recommended) return <div>Loading.</div>;
 
     return (
-     <>
+        <>
      <div className="for-you__title">
         Recommended For You
      </div>
@@ -34,7 +34,7 @@ const Recommended = () => {
      <Book recommended={recommended} />
      <Book recommended={recommended} />
      <Book recommended={recommended} />
-     </>
+        </>
     )
 }
 
