@@ -10,7 +10,7 @@ const Selected = () => {
         const fetchSelect = async () => {
             try{
                 const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected`)
-                setSelect(Array.isArray(data) ? data[0] : data);
+                setSelect(Array.isArray(data) ? data);
             } catch (error) {
                 console.error("Error fetching book:", error);
             }

@@ -8,11 +8,11 @@ const Book = ({ book }) => {
                 <audio></audio>
                 <figure className="book__image--wrapper">
                     <img className="book__image" src={book.imageLink} alt="book" />
-                </figure>
-                <div className="recommended__book--title">
-                    {book.title}
-                </div>
-                <div className="recommended__book--author">
+        </figure>
+        <div className="recommended__book--title">
+            {book.title}
+        </div>
+        <div className="recommended__book--author">
             {book.author}
         </div>
         <div className="recommended__book--sub-title">

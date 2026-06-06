@@ -29,11 +29,8 @@ const Recommended = () => {
      <div className="for-you__sub--title">
         We think you'll like these
      </div>
-     <div className="for-you__recommended--books">
-      {recommended.map((book) => (
-        <Book book={book} key={book.id} />
-      ))}
-    </div>
+     <Book recommended={recommended} />
+    
      </>
     )
 }
