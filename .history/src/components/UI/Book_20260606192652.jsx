@@ -32,7 +32,7 @@ const Book = ({ book }) => {
             <FontAwesomeIcon icon="fa-regular fa-star" />
             </div>
             <div className="recommended__book--details-text">
-            {book.averageRating}
+            
             </div>
         </div>
         </div>

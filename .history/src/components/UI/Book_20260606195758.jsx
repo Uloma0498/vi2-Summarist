@@ -29,7 +29,7 @@ const Book = ({ book }) => {
         </div>
         <div className="recommended__book--details">
             <div className="recommended__book--details-icon">
-            <FontAwesomeIcon icon="fa-regular fa-star" />
+            <FontAwesomeIcon icon="Re" />
             </div>
             <div className="recommended__book--details-text">
             {book.averageRating}

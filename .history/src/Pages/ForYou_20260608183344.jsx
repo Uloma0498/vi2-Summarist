@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useStae } from "react";
 import Navlogo from '../assets/logo.png';
 import Selected from "../components/UI/Selected";
 import Recommended from "../components/UI/Recommended";
@@ -7,25 +7,6 @@ import Suggested from "../components/UI/Suggested";
 
 const ForYou = () => {
 const [isSidebarOpen, setSidebarOpen] = useState(false);
-const sidebarRef = useRef(null);
-
-function toggleMenu() {
-  setSidebarOpen(prevState => !prevState);
-}
-
-useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-                setSidebarOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
-
     return (
         <section id="_next">
           <div className="wrapper">
@@ -37,19 +18,19 @@ useEffect(() => {
                   <input className="search__input" 
                      placeholder="Search for books" 
                      type="text" 
-                     value=""
+                     value
                    />
                   <FontAwesomeIcon icon="magnifying-glass" className="search__icon" />
                 </div>
                 </div>
-                <button className="sidebar__toggle--btn" onClick={toggleMenu}>
+                <button className="sidebar__toggle--btn" onClick={openMenu}>
                   <FontAwesomeIcon icon="bars" />
                 </button>
                </div>
               </div>
             </div>
-            <div className={`sidebar__overlay ${isSidebarOpen ? 'sidebar__overlay--visible' : 'sidebar__overlay--hidden'}`}>
-                <div className={`sidebar ${isSidebarOpen ? 'sidebar--open' : 'sidebar--closed'}`} ref={sidebarRef}>
+            <div className="sidebar__overlay sidebar__overlay--hidden">
+                <div className="sidebar">
                   <div className="sidebar__logo">
                      <img src={Navlogo} alt="Logo" className="nav__img nav__img--mask" />
                   </div>

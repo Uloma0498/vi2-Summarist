@@ -49,7 +49,7 @@ useEffect(() => {
               </div>
             </div>
             <div className={`sidebar__overlay ${isSidebarOpen ? 'sidebar__overlay--visible' : 'sidebar__overlay--hidden'}`}>
-                <div className={`sidebar ${isSidebarOpen ? 'sidebar--open' : 'sidebar--closed'}`} ref={sidebarRef}>
+                <div className={`sidebar ${isSidebarOpen ? 'sidebar--open' : 'sidebar--closed'}`}>
                   <div className="sidebar__logo">
                      <img src={Navlogo} alt="Logo" className="nav__img nav__img--mask" />
                   </div>
