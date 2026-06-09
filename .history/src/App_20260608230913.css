@@ -674,14 +674,6 @@ button:disabled {
   pointer-events: auto;
 }
 
-.sidebar--open {
-  transform: translateX(0);
-}
-
-.sidebar--closed {
-  transform: translateX(-100%);
-}
-
 .sidebar {
     background-color: #f7faf9;
     width: 200px;
@@ -748,6 +740,8 @@ button:disabled {
 .sidebar__link--not-allowed {
     cursor: not-allowed;
 }
+
+
 
 .for-you__title {
     font-size: 22px;
@@ -837,7 +831,7 @@ button:disabled {
 
 .for-you__recommended--books {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     gap: 16px;
     scroll-snap-type: mandatory;
     scroll-snap-type: x;
@@ -851,7 +845,6 @@ button:disabled {
     text-decoration: none;
     border-radius: 4px;
     max-width: 200px;
-    min-width: 200px;
     width: 100%;
 }
 
@@ -1008,6 +1001,17 @@ button:disabled {
    display: flex;
 }
 
+.sidebar {
+ transform: translateX(-100%);
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+.sidebar--closed {
+  transform: translateX(-100%);
+}
 
 .selected__book {
   width: 100%;

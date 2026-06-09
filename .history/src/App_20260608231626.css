@@ -674,13 +674,6 @@ button:disabled {
   pointer-events: auto;
 }
 
-.sidebar--open {
-  transform: translateX(0);
-}
-
-.sidebar--closed {
-  transform: translateX(-100%);
-}
 
 .sidebar {
     background-color: #f7faf9;

@@ -656,6 +656,11 @@ button:disabled {
     cursor: pointer;
 }
 
+.sidebar__overlay--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .sidebar__overlay {
     position: fixed;
     top: 0;
@@ -667,19 +672,6 @@ button:disabled {
     z-index: 10;
     opacity: 0;
     pointer-events: none;
-}
-
-.sidebar__overlay--visible {
-  opacity: .65;
-  pointer-events: auto;
-}
-
-.sidebar--open {
-  transform: translateX(0);
-}
-
-.sidebar--closed {
-  transform: translateX(-100%);
 }
 
 .sidebar {
@@ -837,7 +829,7 @@ button:disabled {
 
 .for-you__recommended--books {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     gap: 16px;
     scroll-snap-type: mandatory;
     scroll-snap-type: x;
@@ -851,7 +843,6 @@ button:disabled {
     text-decoration: none;
     border-radius: 4px;
     max-width: 200px;
-    min-width: 200px;
     width: 100%;
 }
 
@@ -1008,6 +999,17 @@ button:disabled {
    display: flex;
 }
 
+.sidebar {
+ transform: translateX(-100%);
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+.sidebar--closed {
+  transform: translateX(-100%);
+}
 
 .selected__book {
   width: 100%;
