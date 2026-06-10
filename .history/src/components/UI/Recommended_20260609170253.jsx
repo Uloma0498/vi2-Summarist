@@ -4,40 +4,40 @@ import axios from 'axios';
 import Book from "./Book";
 
 
-const Suggested = () => {
-    const [suggested, setSuggested] = useState(null)
+const Recommended = () => {
+    const [recommended, setRecommended] = useState(null)
 
     useEffect(() => {
-        const fetchSuggested = async () => {
+        const fetchRecommended = async () => {
             try{
-                const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested`)
-                setSuggested(data);
+                const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended`)
+                setRecommended(data);
             } catch (error) {
                 console.error("Error fetching book:", error);
             }
         }
-        fetchSuggested();
+        fetchRecommended();
     }, []);
 
-    if(!suggested) return <div>Loading.</div>;
+    if(!recommended) return <div>Loading.</div>;
 
     return (
      <>
      <div className="for-you__title">
-        Suggested Books
+        Recommended For You
      </div>
      <div className="for-you__sub--title">
-        Browse those books
+        We think you'll like these
      </div>
      <div className="for-you__recommended--books">
-      {suggested.map((book) => (
+      {recommended.map((book) => (
         <div className="book" key={book.id}>
         <Book book={book} />
-        </div>
+        </
       ))}
     </div>
      </>
     )
 }
 
-export default Suggested;
+export default Recommended;

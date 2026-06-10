@@ -41,7 +41,7 @@ const Selected = () => {
                     </div>
                     <div className="selected__book--duration-wrapper">
                       <div className="selected__book--icon">
-                        <FontAwesomeIcon icon="circle-play" />
+                        <FontAwesomeIcon icon="circle-" />
                       </div>
                       <div className="selected__book--duration">
                         3 mins 23 secs

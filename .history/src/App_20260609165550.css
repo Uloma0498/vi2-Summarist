@@ -767,10 +767,6 @@ button:disabled {
   margin-bottom: 16px;
 }
 
-.book {
-  flex: 0 0 200px;
-}
-
 .selected__book {
   display: flex;
   justify-content: space-between;
@@ -871,9 +867,7 @@ button:disabled {
   flex-shrink: 0;
 }
 
-.for-you__recommended--books::-webkit-scrollbar {
-    display: none;
-}
+
 
 .book__image--wrapper {
   width: 172px;

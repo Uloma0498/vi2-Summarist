@@ -32,8 +32,7 @@ const Suggested = () => {
      <div className="for-you__recommended--books">
       {suggested.map((book) => (
         <div className="book" key={book.id}>
-        <Book book={book} />
-        </div>
+        <Book book={book} key={book.id} />
       ))}
     </div>
      </>

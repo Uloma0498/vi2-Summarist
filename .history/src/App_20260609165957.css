@@ -872,8 +872,11 @@ button:disabled {
 }
 
 .for-you__recommended--books::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hide scrollbar for a cleaner look */
 }
+
+
+
 
 .book__image--wrapper {
   width: 172px;

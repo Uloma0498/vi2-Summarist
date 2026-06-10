@@ -767,10 +767,6 @@ button:disabled {
   margin-bottom: 16px;
 }
 
-.book {
-  flex: 0 0 200px;
-}
-
 .selected__book {
   display: flex;
   justify-content: space-between;
@@ -799,8 +795,8 @@ button:disabled {
 }
 
 .book__image--wrapper {
-  width: 140px;
-  height: 140px;
+  width: 172px;
+  height: 1px;
 }
 
 .book__image {
@@ -852,7 +848,7 @@ button:disabled {
 
 .for-you__recommended--books {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 16px;
   scroll-snap-type: mandatory;
   scroll-snap-type: x;
@@ -868,11 +864,6 @@ button:disabled {
   max-width: 200px;
   min-width: 200px;
   width: 100%;
-  flex-shrink: 0;
-}
-
-.for-you__recommended--books::-webkit-scrollbar {
-    display: none;
 }
 
 .book__image--wrapper {

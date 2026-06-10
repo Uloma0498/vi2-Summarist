@@ -768,7 +768,7 @@ button:disabled {
 }
 
 .book {
-  flex: 0 0 200px;
+  flex
 }
 
 .selected__book {
@@ -871,9 +871,7 @@ button:disabled {
   flex-shrink: 0;
 }
 
-.for-you__recommended--books::-webkit-scrollbar {
-    display: none;
-}
+
 
 .book__image--wrapper {
   width: 172px;

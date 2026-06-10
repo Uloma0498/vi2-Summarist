@@ -871,9 +871,9 @@ button:disabled {
   flex-shrink: 0;
 }
 
-.for-you__recommended--books::-webkit-scrollbar {
-    display: none;
-}
+
+
+
 
 .book__image--wrapper {
   width: 172px;
