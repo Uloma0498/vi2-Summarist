@@ -52,9 +52,7 @@ const BookDetails = () => {
     }
   }
 
-  const closeModal = () => {
-    setShowAuthModal(false);
-  }
+  const closeModal = 
 
   const toggleMenu =() => {
     setSidebarOpen((prevState) => !prevState);
@@ -269,7 +267,7 @@ const BookDetails = () => {
       </div>
       {showAuthModal && (
         <div className="auth-modal-overlay">
-          <SignIn onClose={() => setShowAuthModal(false)} setIsOpen={setShowAuthModal} />
+          <SignIn onClose={() => setShowAuthModal(false)} />
         </div>
       )}
     </section>

@@ -6,7 +6,6 @@ import ForYou from './Pages/ForYou';
 import SignIn from './components/UI/SignIn';
 import SignUp from './components/UI/SignUp';
 import BookDetails from './Pages/BookDetails';
-import Player from './Pages/Player';
 
 
 function App() {

@@ -269,7 +269,7 @@ const BookDetails = () => {
       </div>
       {showAuthModal && (
         <div className="auth-modal-overlay">
-          <SignIn onClose={() => setShowAuthModal(false)} setIsOpen={setShowAuthModal} />
+          <SignIn onClick={() => setShowAuthModal(false)} />
         </div>
       )}
     </section>

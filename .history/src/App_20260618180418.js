@@ -6,7 +6,6 @@ import ForYou from './Pages/ForYou';
 import SignIn from './components/UI/SignIn';
 import SignUp from './components/UI/SignUp';
 import BookDetails from './Pages/BookDetails';
-import Player from './Pages/Player';
 
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
           />
           <Route path="/for-you" element={<ForYou />} />
           <Route path="/book/:bookId" element={<BookDetails />} />
-          <Route path="/players/:bookId" element={<Player />} />
+          <Route path="/players/:bookId" element={<Playe />} />
         </Routes>
 
         {isOpen && <SignIn setIsOpen={setIsOpen} />}

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const SignIn = ({ setIsOpen }) => {
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessagesetErrorMessage] = useState("");
   const [isSignUpOpen, setSignUpOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
