@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navlogo from '../../assets/logo.png';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SignIn from "./SignIn";
 
 const SidebarDesktop = () => {
     const  [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -14,7 +13,7 @@ const SidebarDesktop = () => {
     };
 
     const handleLogin = () => {
-        setIsModalOpen(true);
+        setIsLoggedI(true);
     };
 
     const closeModal = () => {
@@ -92,11 +91,6 @@ const SidebarDesktop = () => {
                     )}
                 </div>
             </div>
-            {isModalOpen && (
-                    <div className="auth-modal-overlay">
-                      <SignIn onClose={() => setIsModalOpen(false)} setIsOpen={setIsModalOpen} />
-                    </div>
-                  )}
         </div>
     );
 };

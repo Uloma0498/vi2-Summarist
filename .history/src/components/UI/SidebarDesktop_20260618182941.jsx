@@ -92,7 +92,7 @@ const SidebarDesktop = () => {
                     )}
                 </div>
             </div>
-            {isModalOpen && (
+            {setIsModalOpen && (
                     <div className="auth-modal-overlay">
                       <SignIn onClose={() => setIsModalOpen(false)} setIsOpen={setIsModalOpen} />
                     </div>
