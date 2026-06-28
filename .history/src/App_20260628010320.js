@@ -22,7 +22,7 @@ function App() {
         <SidebarDesktop />
         <SearchInput />
         <div className="container">
-          <div className="row">
+          <div className="container"
             <Routes>
               <Route
                 path="/"
@@ -39,8 +39,7 @@ function App() {
               <Route path="/library" element={<Library />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
-          </div>
-        </div>
+
 
         {isOpen && <SignIn setIsOpen={setIsOpen} />}
         {isSignUpOpen && (

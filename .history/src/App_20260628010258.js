@@ -39,8 +39,7 @@ function App() {
               <Route path="/library" element={<Library />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
-          </div>
-        </div>
+
 
         {isOpen && <SignIn setIsOpen={setIsOpen} />}
         {isSignUpOpen && (

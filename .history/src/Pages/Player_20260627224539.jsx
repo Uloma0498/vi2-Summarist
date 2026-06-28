@@ -136,11 +136,94 @@ const Player = () => {
     setAudioDurationSeconds(audio.duration);
     const audioDuration = formatTime(audio.duration);
     setDuration(audioDuration);
-  }
-
-  return (
-    <>
-      {player ? (
+  };
+    
+      return (
+        <section id="_next">
+          <div className="wrapper">
+            <SidebarDesktop />
+            <div className="search__background">
+              <div className="search__wrapper">
+                <div className="search__content">
+                  <SearchInput />
+                  <button className="sidebar__toggle--btn" onClick={toggleMenu}>
+                    <FontAwesomeIcon icon="bars" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className={`sidebar__overlay ${isSidebarOpen ? "sidebar__overlay--visible" : "sidebar__overlay--hidden"}`}
+            >
+              <div
+                className={`sidebar sidebar-mobile ${isSidebarOpen ? "sidebar--open" : "sidebar--closed"}`}
+                ref={sidebarRef}
+              >
+                <div className="sidebar__logo">
+                  <img
+                    src={Navlogo}
+                    alt="Logo"
+                    className="nav__img nav__img--mask"
+                  />
+                </div>
+                <div className="sidebar__wrapper">
+                  <div className="sidebar__top">
+                    <a className="sidebar__link--wrapper" href="/for-you">
+                      <div className="sidebar__link--line active--tab"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="house" />
+                      </div>
+                      <div className="sidebar__link--text">For you</div>
+                    </a>
+                    <a className="sidebar__link--wrapper" href="/library">
+                      <div className="sidebar__link--line"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="bookmark" />
+                      </div>
+                      <div className="sidebar__link--text">My Library</div>
+                    </a>
+                    <div className="sidebar__link--wrapper sidebar__link--not-allowed">
+                      <div className="sidebar__link--line active--tab"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="pen-clip" />
+                      </div>
+                      <div className="sidebar__link--text">Highlights</div>
+                    </div>
+                    <div className="sidebar__link--wrapper sidebar__link--not-allowed">
+                      <div className="sidebar__link--line"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="magnifying-glass" />
+                      </div>
+                      <div className="sidebar__link--text">Search</div>
+                    </div>
+                  </div>
+                  <div className="sidebar__bottom">
+                    <a className="sidebar__link--wrapper" href="/settings">
+                      <div className="sidebar__link--line"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="gear" />
+                      </div>
+                      <div className="sidebar__link--text">Settings</div>
+                    </a>
+                    <div className="sidebar__link--wrapper sidebar__link--not-allowed">
+                      <div className="sidebar__link--line"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="circle-question" />
+                      </div>
+                      <div className="sidebar__link--text">Help & Support</div>
+                    </div>
+                    <div className="sidebar__link--wrapper">
+                      <div className="sidebar__link--line"></div>
+                      <div className="sidebar__icon--wrapper">
+                        <FontAwesomeIcon icon="arrow-right-from-bracket" />
+                      </div>
+                      <div className="sidebar__link--text">Logout</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {player ? (
         <div className="summary">
           <div className="audio__book--summary">
             <div className="audio__book--summary-title">{player.title}</div>
@@ -238,8 +321,8 @@ const Player = () => {
           />
         </div>
       )}
-    </>
-  );
-};
+            </section>
+            )
+}
 
 export default Player;
