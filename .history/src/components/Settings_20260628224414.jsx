@@ -1,0 +1,64 @@
+import React, { useState } from "react";
+import login from "../assets/login.png";
+
+const Settings = () => {
+    const  [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false); 
+    
+        const handleLogout = () => {
+            setIsLoggedIn(false);
+        };
+    
+        const handleLogin = () => {
+            setIsModalOpen(true);
+        };
+    
+        const closeModal = () => {
+            setIsModalOpen(false); 
+        };
+    
+  return (
+    <div className="container">
+      <div className="row">
+       <div className="section__title page__title">
+        Settings
+       </div>
+       {isLoggedIn  ? (
+        <>
+       <div className="setting__content">
+        <div className="settings__sub-title">
+          Your Subscription plan
+        </div>
+        <div className="settings__text">
+         Premium-plus
+        </div>
+        <btn settings__premium--btn>
+         Upgrade to Premium
+        </btn>
+       </div>
+       <div className="setting__content">
+        <div className="settings__sub-title">
+          Email
+        </div>
+        <div className="settings__text">
+         user@example.com
+        </div>
+       </div>
+       </>
+       ) : (
+       <div className="settings__login--wrapper">
+        <img alt="login" src={login} />
+        <div className="settings__login--text">
+          Login in to your account to see your details.
+        </div>
+        <button className="btn settings__login--btn">
+          Login
+        </button>
+       </div>
+       )}
+      </div>
+    </div>
+  );
+};
+
+export default Settings;

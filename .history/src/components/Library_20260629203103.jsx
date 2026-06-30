@@ -1,0 +1,65 @@
+import React from "react";
+import loginlogo from "../assets/login.png";
+ import SignIn from "../components/UI/SignIn"
+ import { useAuth } from "../AuthContext";
+ 
+     
+const Library = () => {
+    const { isLoggedIn, login, logout } = useAuth();
+     const [isModalOpen, setIsModalOpen] = useState(false); 
+     
+         const handleLogin = () => {
+             setIsModalOpen(true);
+         };
+     
+         const closeModal = () => {
+             setIsModalOpen(false); 
+         };
+
+    return (
+        <div className="container">
+              <div className="row">
+                {isLoggedIn  ? (
+                <>
+                <div className="for-you__title">
+                 Saved Books
+                </div>
+                <div className="for-you__sub--title">
+                 0 items
+                </div>
+                <div className="finished__books--block-wrapper">
+                 <div className="finished__books--title">
+                  Save your favorite books!
+                 </div>
+                 <div className="finished__books--sub-title">
+                  When you save a book, it will appear here.
+                 </div>
+                </div>
+                <div className="for-you__title">
+                 Finished
+                </div>
+                <div className="for-you__sub--title">
+                 0 items
+                </div>
+                <div className="for-you__recommended--books">
+                 //a tag book details here//
+                </div>
+                </>
+                ) : (
+               <div className="settings__login--wrapper">
+                <img alt="login" src={loginlogo} />
+                <div className="settings__login--text">
+                  Login in to your account to see your library.
+                </div>
+                <button className="btn settings__login--btn" onClick={handleLogin}>
+                  Login
+                </button>
+                {isModalOpen && <SignIn onClose={closeModal} setIsOpen={setIsModalOpen} />}
+               </div>
+                )}
+              </div>
+            </div>
+    )
+}
+
+export default Library;
