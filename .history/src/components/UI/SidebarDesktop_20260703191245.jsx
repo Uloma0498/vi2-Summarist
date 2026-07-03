@@ -11,7 +11,7 @@ const SidebarDesktop = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        logout();
+        set(false);
     };
 
     const handleLogin = () => {
