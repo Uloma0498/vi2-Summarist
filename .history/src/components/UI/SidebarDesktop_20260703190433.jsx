@@ -6,7 +6,7 @@ import SignIn from "./SignIn";
 import { useAuth } from "../../AuthContext";
 
 const SidebarDesktop = () => {
-    const { isLoggedIn, logout } = useAuth();
+    const { isloggedin, logout } = useAuth();
     const [isModalOpen, setIsModalOpen] = useState(false); 
     const navigate = useNavigate();
 

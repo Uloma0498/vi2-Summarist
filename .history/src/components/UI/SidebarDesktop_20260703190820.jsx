@@ -10,9 +10,6 @@ const SidebarDesktop = () => {
     const [isModalOpen, setIsModalOpen] = useState(false); 
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-    };
 
     const handleLogin = () => {
         setIsModalOpen(true);
