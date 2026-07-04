@@ -24,7 +24,7 @@ console.log(auth.currentUser);
   };
 
   const handleUpgrade = () => {
-    navigate("/choose-plan");
+    navigate("/sales");
   };
 
   useEffect(() => {
@@ -45,7 +45,7 @@ console.log(auth.currentUser);
               <div className="settings__sub--title">Your Subscription plan</div>
               <div className="settings__text">Basic</div>
               <button
-                className="btn settings__login--btn"
+                className="btn settings__premium--btn"
                 onClick={handleUpgrade}
               >
                 Upgrade to Premium

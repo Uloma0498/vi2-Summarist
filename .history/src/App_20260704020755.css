@@ -1278,7 +1278,7 @@ button:disabled {
   margin-bottom: 16px;
 }
 
-.btn.settings__login--btn{
+.btn.settings__login--btn.settings {
   width: 100px;
 }
 

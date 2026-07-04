@@ -56,7 +56,7 @@ const Library = () => {
                 </button>
                 {isModalOpen && (
                   <SignIn onClose={closeModal} setIsOpen={setIsModalOpen} />
-                )}
+                            )}
                </div>
                 )}
               </div>

@@ -23,7 +23,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          {path !== "/" && path !== "/choose-plan" && (
+          {path !== "/" && path !== "/choose-plan" &&(
             <>
               <SidebarDesktop />
               <SearchInput />

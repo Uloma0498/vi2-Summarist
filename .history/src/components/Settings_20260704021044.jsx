@@ -62,7 +62,7 @@ console.log(auth.currentUser);
             <div className="settings__login--text">
               Login in to your account to see your details.
             </div>
-            <button className="btn settings__login--btn" onClick={handleLogin}>
+            <button className="btn settings__log--btn" onClick={handleLogin}>
               Login
             </button>
             {isModalOpen && (
