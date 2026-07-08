@@ -29,6 +29,7 @@ function App() {
               <SearchInput />
             </>
           )}
+
           <div className="container">
             <div className="row">
               <Routes>

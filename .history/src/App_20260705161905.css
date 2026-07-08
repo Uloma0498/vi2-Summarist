@@ -1539,10 +1539,6 @@ button:disabled {
   transition: .3s;
 }
 
-.collapse.show {
-    height: auto;
-}
-
 .collapse {
   position: relative;
   height: 0;

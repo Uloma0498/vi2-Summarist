@@ -1,31 +1,14 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState } from "react";
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 
-const SubscriptionContext = createContext();
-
-export const useSubscription = () => {
-    return useContext(SubscriptionContext);
-};
-
-export const SubscriptionProvider = ({ children }) => {
-    const [selectedPlan, setSelectedPlan] = useState(null);
-
-    return (
-        <SubscriptionContext.Provider value={{ selectedPlan, setSelectedPlan }}>
-            {children}
-        </SubscriptionContext.Provider>
-    );
-};
-
-
 const Sales = () => {
   const { login, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { selectedPlan, setSelectedPlan } = useSubscription();
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const [openAccordion, setOpenAccordion] = useState(null);
 
   const handleLogin = () => {
@@ -156,7 +139,9 @@ const Sales = () => {
                      {
                        question: "Can I cancel during my trial or subscription?",
                        answer: "You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.",
-                     }].map((faq, index) => (
+                     }
+                                    
+                                ].map((faq, index) => (
                <div className="accordion__card" key={index}>
                 <div className="accordion__header" onClick={() => toggleAccordion(index)}>
                   <div className="accordion__title">

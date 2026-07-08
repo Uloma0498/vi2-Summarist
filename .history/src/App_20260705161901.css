@@ -1417,7 +1417,7 @@ button:disabled {
   justify-content: center;
   color: #032b41;
   margin-bottom: 12px;
-  font-size: 48px;
+  font-size: 
 }
 
 .plan__features--text {
@@ -1537,10 +1537,6 @@ button:disabled {
   margin-bottom: 0;
   color: #032b41;
   transition: .3s;
-}
-
-.collapse.show {
-    height: auto;
 }
 
 .collapse {

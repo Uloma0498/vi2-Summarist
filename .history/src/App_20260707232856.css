@@ -1542,7 +1542,6 @@ button:disabled {
 .collapse.show {
     height: auto;
 }
-
 .collapse {
   position: relative;
   height: 0;

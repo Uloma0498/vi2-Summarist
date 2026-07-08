@@ -4,7 +4,7 @@ import SignIn from "../components/UI/SignIn";
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useSubscription } from "../components/Sales";
+import { useSubscription } from "../path/to/SubscriptionContext";
 
 const auth = getAuth();
 
@@ -45,7 +45,7 @@ console.log(auth.currentUser);
           <>
             <div className="setting__content">
               <div className="settings__sub--title">Your Subscription plan</div>
-              <div className="settings__text">{selectedPlan || "Basic"}</div>
+              <div className="settings__text">B</div>
               <button
                 className="btn settings__login--btn"
                 onClick={handleUpgrade}

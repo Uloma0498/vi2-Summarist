@@ -29,8 +29,9 @@ function App() {
               <SearchInput />
             </>
           )}
-          <div className="container">
-            <div className="row">
+
+          .container
+          
               <Routes>
                 <Route
                   path="/"
@@ -48,8 +49,8 @@ function App() {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/choose-plan" element={<Sales />} />
               </Routes>
-            </div>
-          </div>         
+            
+
           {isOpen && <SignIn setIsOpen={setIsOpen} />}
           {isSignUpOpen && (
             <SignUp

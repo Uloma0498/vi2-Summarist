@@ -25,7 +25,7 @@ export const SubscriptionProvider = ({ children }) => {
 const Sales = () => {
   const { login, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { selectedPlan, setSelectedPlan } = useSubscription();
+  const [selectedPlan, setSelectedPlan = useState(null);
   const [openAccordion, setOpenAccordion] = useState(null);
 
   const handleLogin = () => {

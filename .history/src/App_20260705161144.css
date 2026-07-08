@@ -1368,10 +1368,10 @@ button:disabled {
   left: 0;
   z-index: -1;
   width: 100%;
-  height: 100%;
-  background-color: #032b41;
-  border-bottom-right-radius: 16rem;
-  border-bottom-left-radius: 16rem;
+    height: 100%;
+    background-color: #032b41;
+    border-bottom-right-radius: 16rem;
+    border-bottom-left-radius: 16rem;
 }
 
 .plan__header {
@@ -1417,7 +1417,6 @@ button:disabled {
   justify-content: center;
   color: #032b41;
   margin-bottom: 12px;
-  font-size: 48px;
 }
 
 .plan__features--text {
@@ -1537,10 +1536,6 @@ button:disabled {
   margin-bottom: 0;
   color: #032b41;
   transition: .3s;
-}
-
-.collapse.show {
-    height: auto;
 }
 
 .collapse {

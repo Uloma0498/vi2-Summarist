@@ -4,7 +4,7 @@ import SignIn from "../components/UI/SignIn";
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useSubscription } from "../components/Sales";
+import { useSubscription } from "../path/to/SubscriptionContext";
 
 const auth = getAuth();
 
@@ -12,7 +12,7 @@ const Settings = () => {
   const { login, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-  const { selectedPlan } = useSubscription();
+  
   const [user, setUser] = useState(null);
 console.log(auth.currentUser);
   const isLoggedIn = !!user;
@@ -45,7 +45,7 @@ console.log(auth.currentUser);
           <>
             <div className="setting__content">
               <div className="settings__sub--title">Your Subscription plan</div>
-              <div className="settings__text">{selectedPlan || "Basic"}</div>
+              <div className="settings__text">Basic</div>
               <button
                 className="btn settings__login--btn"
                 onClick={handleUpgrade}

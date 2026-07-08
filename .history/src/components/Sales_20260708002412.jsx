@@ -1,31 +1,14 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState } from "react";
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 
-const SubscriptionContext = createContext();
-
-export const useSubscription = () => {
-    return useContext(SubscriptionContext);
-};
-
-export const SubscriptionProvider = ({ children }) => {
-    const [selectedPlan, setSelectedPlan] = useState(null);
-
-    return (
-        <SubscriptionContext.Provider value={{ selectedPlan, setSelectedPlan }}>
-            {children}
-        </SubscriptionContext.Provider>
-    );
-};
-
-
 const Sales = () => {
   const { login, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { selectedPlan, setSelectedPlan } = useSubscription();
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const [openAccordion, setOpenAccordion] = useState(null);
 
   const handleLogin = () => {
@@ -106,9 +89,11 @@ const Sales = () => {
                </div>
               </div>
               <div className="plan__card--separator">
+                
                 <div className="plan__separator">
                 or
                 </div>
+  
               </div>
               <div className="plan__card" onClick={() => handlePlanSelect("premiumMonthly")}>
                <div className="plan__card--circle"></div>
@@ -140,45 +125,47 @@ const Sales = () => {
                 </div>
               </div>
               <div className="faq__wrapper">
-                {[
-                     {
-                       question: "How does the free 7-day trial work?",
-                       answer: "Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.",
-                     },
-                     {
-                       question: "Can I switch subscriptions from monthly to yearly, or yearly to monthly?",
-                       answer: "While an annual plan is active, it is not feasible to switch to a monthly plan. However, once the current month ends, transitioning from a monthly plan to an annual plan is an option.",
-                     },
-                    {
-                       question: "What's included in the Premium plan?",
-                       answer: "Premium membership provides you with the ultimate Summarist experience, including unrestricted entry to many best-selling books high-quality audio, the ability to download titles for offline reading, and the option to send your reads to your Kindle.",
-                     },
-                     {
-                       question: "Can I cancel during my trial or subscription?",
-                       answer: "You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.",
-                     }].map((faq, index) => (
+                {[ // Array of FAQs
+                                    {
+                                        question: "How does the free 7-day trial work?",
+                                        answer: "Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.",
+                                    },
+                                    {
+                                        question: "Can I switch subscriptions from monthly to yearly, or yearly to monthly?",
+                                        answer: "While an annual plan is active, it is not feasible to switch to a monthly plan. However, once the current month ends, transitioning from a monthly plan to an annual plan is an option.",
+                                    }
+                                    {
+                                      question: "What's included in the Premium plan?",
+                                      answer: "Premium membership provides you with the ultimate Summarist experience, including unrestricted entry to many best-selling books high-quality audio, the ability to download titles for offline reading, and the option to send your reads to your Kindle.",
+                                    }
+                                    {
+                                      question: "Can I cancel during my trial or subscription?",
+                                      answer: "You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.",
+                                    }
+                                    // Add more FAQs as needed
+                                ].map((faq, index) => (
                <div className="accordion__card" key={index}>
                 <div className="accordion__header" onClick={() => toggleAccordion(index)}>
                   <div className="accordion__title">
                     {faq.question}
                   </div>
-                  <FontAwesomeIcon icon={openAccordion === index ? "angle-up" : "angle-down"} />
+                  <FontAwesomeIcon icon="angle-down" />
                 </div>
-                {openAccordion === index && ( // Conditional rendering for open accordion
                 <div className="collapse show">
                  <div className="accordion__body">
-                  {faq.answer}
+                  Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.
                  </div>
                 </div>
-                )}
                </div>
-                ))}
-               </div>
+             
+            
+             
               </div>
             </div>
           </div>
           <Footer />
          </div>
+        </div>
     )
 }
 
