@@ -34,7 +34,7 @@ export const getCheckoutUrl = async (
     cancel_url: window.location.origin,
   });
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     const unsubscribe = onSnapshot(docRef, (snap) => {
       const { error, url } = snap.data() 
 
@@ -57,7 +57,7 @@ export const getPortalUrl = async  => {
   const auth = getAuth(app);
   const user = auth.currentUser;
 
-    if (!user) throw new Error("User is not authenticated");
+  
 
   try {
     const functions = getFunctions(app, "us-central1");
@@ -78,7 +78,7 @@ export const getPortalUrl = async  => {
     console.error(error);
   }
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     if (dataWithUrl?.url) {
       resolve(dataWithUrl.url);
     } else {

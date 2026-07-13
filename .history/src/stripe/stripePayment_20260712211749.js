@@ -78,7 +78,7 @@ export const getPortalUrl = async  => {
     console.error(error);
   }
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     if (dataWithUrl?.url) {
       resolve(dataWithUrl.url);
     } else {

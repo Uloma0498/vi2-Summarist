@@ -34,7 +34,7 @@ export const getCheckoutUrl = async (
     cancel_url: window.location.origin,
   });
 
-  return new Promise((resolve, reject) => {
+  return new ((resolve, reject) => {
     const unsubscribe = onSnapshot(docRef, (snap) => {
       const { error, url } = snap.data() 
 
@@ -78,7 +78,7 @@ export const getPortalUrl = async  => {
     console.error(error);
   }
 
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     if (dataWithUrl?.url) {
       resolve(dataWithUrl.url);
     } else {
