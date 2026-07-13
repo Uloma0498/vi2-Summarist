@@ -1,4 +1,5 @@
 import { faWindowRestore } from "@fortawesome/free-regular-svg-icons";
+import { db } from 
 
 const docRef = await db
   .collection('customers')
