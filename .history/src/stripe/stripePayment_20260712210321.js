@@ -14,7 +14,7 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 export const getCheckoutUrl = async (
   
 
-) => {
+):  => {
   const auth = getAuth(app);
   const userId = auth.currentUser?.uid;
 
@@ -36,7 +36,10 @@ export const getCheckoutUrl = async (
 
   return new Promise<string>((resolve, reject) => {
     const unsubscribe = onSnapshot(docRef, (snap) => {
-      const { error, url } = snap.data() 
+      const { error, url } = snap.data() as {
+        error?: { message: string };
+        url?: string;
+      };
 
       if (error) {
         unsubscribe();
@@ -57,7 +60,7 @@ export const getPortalUrl = async  => {
   const auth = getAuth(app);
   const user = auth.currentUser;
 
-  let dataWithUrl: { url: string } | null = null;
+  let dataWithUrl: ;
 
   try {
     const functions = getFunctions(app, "us-central1");
@@ -72,7 +75,7 @@ export const getPortalUrl = async  => {
     });
 
     // Add a type to the data
-    dataWithUrl = data;
+    dataWithUrl = data as { url: string };
     console.log("Reroute to Stripe portal: ", dataWithUrl.url);
   } catch (error) {
     console.error(error);

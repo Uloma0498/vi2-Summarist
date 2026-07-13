@@ -14,7 +14,7 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 export const getCheckoutUrl = async (
   
 
-) => {
+):  => {
   const auth = getAuth(app);
   const userId = auth.currentUser?.uid;
 
@@ -72,7 +72,7 @@ export const getPortalUrl = async  => {
     });
 
     // Add a type to the data
-    dataWithUrl = data;
+    dataWithUrl = data as { url: string };
     console.log("Reroute to Stripe portal: ", dataWithUrl.url);
   } catch (error) {
     console.error(error);

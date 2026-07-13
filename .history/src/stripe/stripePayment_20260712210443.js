@@ -57,7 +57,7 @@ export const getPortalUrl = async  => {
   const auth = getAuth(app);
   const user = auth.currentUser;
 
-  let dataWithUrl: { url: string } | null = null;
+  let dataWithUrl: 
 
   try {
     const functions = getFunctions(app, "us-central1");
