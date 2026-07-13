@@ -21,7 +21,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <SubscriptionProvider>
+      <SubscriptionProvider></SubscriptionProvider>
       <Router>
         <div className="App">
           {path !== "/" && path !== "/choose-plan" && (
@@ -61,7 +61,7 @@ function App() {
           )}
         </div>
       </Router>
-      </SubscriptionProvider>
+        </SubscriptionProvider>
     </AuthProvider>
   );
 }

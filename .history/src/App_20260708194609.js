@@ -8,11 +8,12 @@ import SignIn from "./components/UI/SignIn";
 import SignUp from "./components/UI/SignUp";
 import BookDetails from "./Pages/BookDetails";
 import Player from "./Pages/Player";
+import Library from "./components/Library";
 import Settings from "./components/Settings";
 import SidebarDesktop from "./components/UI/SidebarDesktop";
 import SearchInput from "./components/UI/SearchInput";
 import Sales from "./components/Sales";
-import { SubscriptionProvider } from './SubscriptionContext';
+import { SubscriptionProvider } from './path/to/SubscriptionContext';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,6 @@ function App() {
 
   return (
     <AuthProvider>
-      <SubscriptionProvider>
       <Router>
         <div className="App">
           {path !== "/" && path !== "/choose-plan" && (
@@ -45,10 +45,11 @@ function App() {
                 <Route path="/for-you" element={<ForYou />} />
                 <Route path="/book/:bookId" element={<BookDetails />} />
                 <Route path="/player/:bookId" element={<Player />} />
-                
+                <Route path="/library" element={<Library />} />
+                <SubscriptionProvider>
                   <Route path="/choose-plan" element={<Sales />} />
                   <Route path="/settings" element={<Settings />} />
-              
+                </SubscriptionProvider>
               </Routes>
             </div>
           </div>         
@@ -61,7 +62,6 @@ function App() {
           )}
         </div>
       </Router>
-      </SubscriptionProvider>
     </AuthProvider>
   );
 }

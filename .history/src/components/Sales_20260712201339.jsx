@@ -1,5 +1,5 @@
 import React, { useState, useContext, createContext } from "react";
-import { Router, useRouter } from "react-router-dom";
+import { useRouter } from "REA
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
@@ -31,10 +31,10 @@ const Sales = () => {
         setOpenAccordion(openAccordion === index ? null : index);
     };
   
-  const handleUpgrade = async () => {
+  const handleUpgrade = () => {
     const priceId = selectedPlan === "premiumPlus" ? "price_1TsVY1GdbsGRY90HaCIewBS5" : selectedPlan === "premiumMonthly" ? "price_1TsVYgGdbsGRY90HCx1bsH2H" : null;
-    const checkoutUrl = await getCheckoutUrl(App, priceId);
-    Router.push(checkoutUrl);
+    const checkoutUrl = getCheckoutUrl(App, priceId);
+    router.push(checkoutUrl);
   }
 
     return (

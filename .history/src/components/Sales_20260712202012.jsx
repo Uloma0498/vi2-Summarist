@@ -33,7 +33,7 @@ const Sales = () => {
   
   const handleUpgrade = async () => {
     const priceId = selectedPlan === "premiumPlus" ? "price_1TsVY1GdbsGRY90HaCIewBS5" : selectedPlan === "premiumMonthly" ? "price_1TsVYgGdbsGRY90HCx1bsH2H" : null;
-    const checkoutUrl = await getCheckoutUrl(App, priceId);
+    const checkoutUrl = getCheckoutUrl(App, priceId);
     Router.push(checkoutUrl);
   }
 

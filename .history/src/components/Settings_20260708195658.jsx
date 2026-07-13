@@ -4,7 +4,7 @@ import SignIn from "../components/UI/SignIn";
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useSubscription } from '../SubscriptionContext';
+import { useSubscription } from '..SubscriptionContext/SubscriptionContext';
 
 const auth = getAuth();
 

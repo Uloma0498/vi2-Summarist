@@ -1,13 +1,10 @@
 import React, { useState, useContext, createContext } from "react";
-import { Router, useRouter } from "react-router-dom";
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 import { useSubscription } from '../SubscriptionContext'
-import { getCheckoutUrl } from "../stripe/stripePayment";
-import App from "../App";
 
 const Sales = () => {
   const { login, logout } = useAuth();
@@ -31,10 +28,8 @@ const Sales = () => {
         setOpenAccordion(openAccordion === index ? null : index);
     };
   
-  const handleUpgrade = async () => {
-    const priceId = selectedPlan === "premiumPlus" ? "price_1TsVY1GdbsGRY90HaCIewBS5" : selectedPlan === "premiumMonthly" ? "price_1TsVYgGdbsGRY90HCx1bsH2H" : null;
-    const checkoutUrl = await getCheckoutUrl(App, priceId);
-    Router.push(checkoutUrl);
+  const handleUpgrade = () => {
+    const priceId = selectedPlan === "premiumPlus" ? "price_1TsVY1GdbsGRY90HaCIewBS5" : selectedPlan === "premiumMonthly" ? "" : null;
   }
 
     return (
