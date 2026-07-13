@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 import { useSubscription } from '../SubscriptionContext'
+import { getCheckoutUrl } from "../firebase/db";
 import App from "../App";
 
 const Sales = () => {

@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 import { useSubscription } from '../SubscriptionContext'
+import { getCheckoutUrl } from "../firebase/stripePayment";
 import App from "../App";
 
 const Sales = () => {
@@ -29,6 +30,12 @@ const Sales = () => {
   const toggleAccordion = (index) => {
         setOpenAccordion(openAccordion === index ? null : index);
     };
+  
+  const handleUpgrade = async () => {
+    const priceId = selectedPlan === "premiumPlus" ? "price_1TsVY1GdbsGRY90HaCIewBS5" : selectedPlan === "premiumMonthly" ? "price_1TsVYgGdbsGRY90HCx1bsH2H" : null;
+    const checkoutUrl = await getCheckoutUrl(App, priceId);
+    window.location.assign(checkoutUrl);
+  }
 
     return (
         <div className="wrapper wrapper__full">
