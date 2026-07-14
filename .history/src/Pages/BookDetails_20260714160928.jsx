@@ -9,7 +9,7 @@ import SignIn from "../components/UI/SignIn";
 const BookDetails = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
-  const {setSidebarOpen} = useState(false);
+  const [isSidebarOpen, setSidebarOpen} = useState(false);
   const [bookDetails, setBookDetails] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -53,6 +53,14 @@ const BookDetails = () => {
     }
   };
 
+  const closeModal = () => {
+    setShowAuthModal(false);
+  };
+
+  const toggleMenu = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -64,7 +72,7 @@ const BookDetails = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [setSidebarOpen]);
+  }, []);
 
   return (
     <>

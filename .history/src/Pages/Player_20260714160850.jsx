@@ -8,7 +8,7 @@ import SignIn from "../components/UI/SignIn";
 
 const Player = () => {
   const { bookId } = useParams();
-  const {setSidebarOpen} = useState(false);
+  const setSidebarOpen} = useState(false);
   const [player, setPlayer] = useState(null);
   const {setIsLoggedIn} = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -101,7 +101,7 @@ const Player = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [setSidebarOpen]);
+  }, []);
 
   const formatTime = (seconds) => {
     seconds = Math.max(0, seconds);

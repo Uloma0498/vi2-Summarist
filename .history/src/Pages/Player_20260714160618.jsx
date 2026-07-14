@@ -1,16 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/init";
 import SignIn from "../components/UI/SignIn";
 
 const Player = () => {
   const { bookId } = useParams();
-  const {setSidebarOpen} = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [player, setPlayer] = useState(null);
-  const {setIsLoggedIn} = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
   const sidebarRef = useRef(null);
@@ -40,7 +40,7 @@ const Player = () => {
     }
 
     return () => unsubscribe();
-  }, [bookId, setIsLoggedIn]);
+  }, [bookId]);
 
   const audio = audioRef.current;
   useEffect(() => {
@@ -101,7 +101,7 @@ const Player = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [setSidebarOpen]);
+  }, []);
 
   const formatTime = (seconds) => {
     seconds = Math.max(0, seconds);

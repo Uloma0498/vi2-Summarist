@@ -53,6 +53,14 @@ const BookDetails = () => {
     }
   };
 
+  const closeModal = () => {
+    setShowAuthModal(false);
+  };
+
+  const toggleMenu = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {

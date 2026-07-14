@@ -101,7 +101,7 @@ const Player = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [setSidebarOpen]);
+  }, []);
 
   const formatTime = (seconds) => {
     seconds = Math.max(0, seconds);
