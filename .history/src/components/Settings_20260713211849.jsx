@@ -8,10 +8,6 @@ import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { auth, db } from "../firebase/init";
 
 
-const plansByPriceId = {
-  price_1Tst67GdbsGRY90H9zHRhVJE: "Premium Plus",
-  price_1TsVYgGdbsGRY90HCx1bsH2H: "Premium",
-};
 
 const Settings = () => {
   const { login, logout } = useAuth();
@@ -20,7 +16,6 @@ const Settings = () => {
   const [user, setUser] = useState(null);
 console.log(auth.currentUser);
   const isLoggedIn = !!user;
-  const [subscriptionPlan, setSubscriptionPlan] = useState("Basic");
 
   const handleLogin = () => {
     setIsModalOpen(true);
@@ -40,40 +35,12 @@ console.log(auth.currentUser);
   };
 
   useEffect(() => {
-  let unsubscribeSubscription = () => {};
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
 
-  const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
-    setUser(user);
-    unsubscribeSubscription();
-
-    if (!user) {
-      setSubscriptionPlan("Basic");
-      return;
-    }
-
-    const subscriptionsQuery = query(
-      collection(db, "customers", user.uid, "subscriptions"),
-      where("status", "in", ["trialing", "active"])
-    );
-
-    unsubscribeSubscription = onSnapshot(
-      subscriptionsQuery,
-      (snapshot) => {
-        const subscription = snapshot.docs[0]?.data();
-        const priceId = subscription?.price?.id;
-
-        setSubscriptionPlan(
-          plansByPriceId[priceId] || "Basic"
-        );
-      }
-    );
-  });
-
-  return () => {
-    unsubscribeAuth();
-    unsubscribeSubscription();
-  };
-}, []);
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="container">
@@ -83,14 +50,13 @@ console.log(auth.currentUser);
           <>
             <div className="setting__content">
               <div className="settings__sub--title">Your Subscription plan</div>
-              <div className="settings__text">{subscriptionPlan}</div>
-              {subscriptionPlan === "Basic" && (
-               <button
+              <div className="settings__text">{planLabels[selectedPlan] || "Basic"}</div>
+              <button
                 className="btn settings__login--btn"
-                onClick={handleUpgrade}>
-               Upgrade to Premium
-               </button>
-       )}
+                onClick={handleUpgrade}
+              >
+                Upgrade to Premium
+              </button>
             </div>
             <div className="setting__content">
               <div className="settings__sub--title">Email</div>

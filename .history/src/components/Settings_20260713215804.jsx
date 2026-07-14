@@ -86,11 +86,12 @@ console.log(auth.currentUser);
               <div className="settings__text">{subscriptionPlan}</div>
               {subscriptionPlan === "Basic" && (
                <button
-                className="btn settings__login--btn"
-                onClick={handleUpgrade}>
-               Upgrade to Premium
-               </button>
-       )}
+    className="btn settings__login--btn"
+    onClick={handleUpgrade}
+  >
+    Upgrade to Premium
+  </button>
+)}
             </div>
             <div className="setting__content">
               <div className="settings__sub--title">Email</div>

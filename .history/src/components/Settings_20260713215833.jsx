@@ -89,8 +89,8 @@ console.log(auth.currentUser);
                 className="btn settings__login--btn"
                 onClick={handleUpgrade}>
                Upgrade to Premium
-               </button>
-       )}
+  </button>
+)}
             </div>
             <div className="setting__content">
               <div className="settings__sub--title">Email</div>
