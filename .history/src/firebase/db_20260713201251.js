@@ -9,20 +9,14 @@ export async function createCheckoutSession(priceId, trialDays = 0) {
     return;
   }
 
-  const checkoutData = {
-  price: priceId,
-  success_url: `${window.location.origin}/settings`,
-  cancel_url: `${window.location.origin}/choose-plan`,
-};
-
-if (trialDays > 0) {
-  checkoutData.trial_period_days = trialDays;
-}
-
-const docRef = await addDoc(
-  collection(db, "customers", user.uid, "checkout_sessions"),
-  checkoutData
-);
+  const docRef = await addDoc(
+    collection(db, "customers", user.uid, "checkout_sessions"),
+    {
+      price: priceId,
+      success_url: `${window.location.origin}/settings`,
+      cancel_url: `${window.location.origin}/choose-plan`,
+    }
+  );
 
   onSnapshot(docRef, (snapshot) => {
     const { error, url } = snapshot.data() || {};

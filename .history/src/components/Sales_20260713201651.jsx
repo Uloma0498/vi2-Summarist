@@ -44,7 +44,7 @@ const Sales = () => {
     return;
   }
   
-  const trialDays = selectedPlan === "premiumPlus" ? 7 : 0;
+  const trialDa
   createCheckoutSession(priceIds[selectedPlan]);
 };
 

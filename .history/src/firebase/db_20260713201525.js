@@ -23,7 +23,6 @@ const docRef = await addDoc(
   collection(db, "customers", user.uid, "checkout_sessions"),
   checkoutData
 );
-
   onSnapshot(docRef, (snapshot) => {
     const { error, url } = snapshot.data() || {};
 
