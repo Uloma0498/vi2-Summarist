@@ -1578,10 +1578,7 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    }
-    
+  .sidebar{display:;}
   .landing__content {
     display: flex;
     flex-direction: column;

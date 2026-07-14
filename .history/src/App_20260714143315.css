@@ -1581,7 +1581,6 @@ button:disabled {
   .sidebar {
     transform: translateX(-100%);
     }
-    
   .landing__content {
     display: flex;
     flex-direction: column;

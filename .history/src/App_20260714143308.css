@@ -1579,9 +1579,8 @@ button:disabled {
 
 @media (max-width: 768px) {
   .sidebar {
-    transform: translateX(-100%);
+    transform: translateX(-100%)
     }
-    
   .landing__content {
     display: flex;
     flex-direction: column;
