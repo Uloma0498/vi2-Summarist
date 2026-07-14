@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
+import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 import { useSubscription } from '../SubscriptionContext'
 import { createCheckoutSession } from "../firebase/db";
@@ -11,6 +12,9 @@ const Sales = () => {
   const { selectedPlan, setSelectedPlan } = useSubscription();
   const [openAccordion, setOpenAccordion] = useState(null);
 
+  const handleLogin = () => {
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);

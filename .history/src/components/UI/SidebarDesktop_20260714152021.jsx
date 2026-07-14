@@ -3,6 +3,7 @@ import Navlogo from "../../assets/logo.png";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SignIn from "./SignIn";
+
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 const auth = getAuth();

@@ -3,12 +3,13 @@ import Navlogo from "../../assets/logo.png";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SignIn from "./SignIn";
+import { useAuth } from "../../AuthContext";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 const auth = getAuth();
 
 const SidebarDesktop = () => {
-  
+  const { logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 

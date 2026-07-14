@@ -43,6 +43,14 @@ const Player = () => {
     return () => unsubscribe();
   }, [bookId]);
 
+  const closeModal = () => {
+    setShowAuthModal(false);
+  };
+
+  const toggleMenu = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
   const audio = audioRef.current;
   useEffect(() => {
     if (audio) {
@@ -62,7 +70,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, [audio]);
+  }, []);
 
   const handlePlayPause = () => {
     if (isPlaying) {

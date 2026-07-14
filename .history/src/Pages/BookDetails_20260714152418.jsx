@@ -1,9 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState, useRef } from "react";
+
+import Selected from "../components/UI/Selected";
+import Recommended from "../components/UI/Recommended";
+import Suggested from "../components/UI/Suggested";
+import SidebarDesktop from "../components/UI/SidebarDesktop";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/init";
+import SearchInput from "../components/UI/SearchInput";
 import SignIn from "../components/UI/SignIn";
 
 const BookDetails = () => {

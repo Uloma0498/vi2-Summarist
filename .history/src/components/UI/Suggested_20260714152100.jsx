@@ -1,45 +1,46 @@
+
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Book from "./Book";
 
 
-const Recommended = () => {
-    const [recommended, setRecommended] = useState(null)
+const Suggested = () => {
+    const [suggested, setSuggested] = useState(null)
 
     useEffect(() => {
-        const fetchRecommended = async () => {
+        const fetchSuggested = async () => {
             try{
-                const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended`)
-                setRecommended(data);
+                const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested`)
+                setSuggested(data);
             } catch (error) {
                 console.error("Error fetching book:", error);
             }
         }
-        fetchRecommended();
+        fetchSuggested();
     }, []);
 
-    if(!recommended) return <div>Loading.</div>;
+    if(!suggested) return <div>Loading.</div>;
 
     return (
      <>
      <div className="for-you__title">
-        Recommended For You
+        Suggested Books
      </div>
      <div className="for-you__sub--title">
-        We think you'll like these
+        Browse those books
      </div>
      <div className="for-you__recommended--books">
-      {recommended.map((book) => (
+      {suggested.map((book) => (
         <div className="book" key={book.id}>
         <Book book={book} />
         {book.subscriptionRequired && (
-         <span className="premium-pill">Premium</span> // Display pill if subscription is required
+         <span className="premium-pill">Premium</span> 
      )}
         </div>
       ))}
     </div>
-    </>
+     </>
     )
-}
+};
 
-export default Recommended;
+export default Suggested;

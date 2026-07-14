@@ -62,7 +62,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, [audio]);
+  }, []);
 
   const handlePlayPause = () => {
     if (isPlaying) {

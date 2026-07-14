@@ -11,6 +11,9 @@ const Sales = () => {
   const { selectedPlan, setSelectedPlan } = useSubscription();
   const [openAccordion, setOpenAccordion] = useState(null);
 
+  const handleLogin = () => {
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);

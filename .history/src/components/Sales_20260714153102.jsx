@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useCo } from "react";
+import { Router, useRouter } from "react-router-dom";
 import pricing from "../assets/pricing-top.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
+import { useAuth } from "../AuthContext";
 import SignIn from "../components/UI/SignIn";
 import { useSubscription } from '../SubscriptionContext'
+import App from "../App";
 import { createCheckoutSession } from "../firebase/db";
 
 const Sales = () => {
+  const { login, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { selectedPlan, setSelectedPlan } = useSubscription();
   const [openAccordion, setOpenAccordion] = useState(null);
 
+  const handleLogin = () => {
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);

@@ -1,9 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState, useRef } from "react";
+
+
+
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/init";
+import SearchInput from "../components/UI/SearchInput";
 import SignIn from "../components/UI/SignIn";
 
 const BookDetails = () => {

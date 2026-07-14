@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/init";
+import SearchInput from "../components/UI/SearchInput";
 import SignIn from "../components/UI/SignIn";
 
 const Player = () => {
@@ -18,8 +19,8 @@ const Player = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const  {setAudioDurationSeconds} = useState(null);
-  
+  const [audioDurationSeconds, setAudioDurationSeconds] = useState(null);
+  const [remainingTime, setRemainingTime] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,6 +44,14 @@ const Player = () => {
     return () => unsubscribe();
   }, [bookId]);
 
+  const closeModal = () => {
+    setShowAuthModal(false);
+  };
+
+  const toggleMenu = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
   const audio = audioRef.current;
   useEffect(() => {
     if (audio) {
@@ -62,7 +71,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, [audio]);
+  }, []);
 
   const handlePlayPause = () => {
     if (isPlaying) {

@@ -9,7 +9,7 @@ import SignIn from "../components/UI/SignIn";
 const BookDetails = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const setSidebarOpen} = useState(false);
   const [bookDetails, setBookDetails] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);

@@ -11,7 +11,7 @@ const Player = () => {
   const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [player, setPlayer] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
   const sidebarRef = useRef(null);
@@ -43,6 +43,10 @@ const Player = () => {
     return () => unsubscribe();
   }, [bookId]);
 
+  const toggleMenu = () => {
+    setSidebarOpen((prevState) => !prevState);
+  };
+
   const audio = audioRef.current;
   useEffect(() => {
     if (audio) {
@@ -62,7 +66,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, [audio]);
+  }, []);
 
   const handlePlayPause = () => {
     if (isPlaying) {

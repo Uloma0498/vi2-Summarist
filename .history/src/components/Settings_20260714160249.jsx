@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import loginlogo from "../assets/login.png";
 import SignIn from "../components/UI/SignIn";
+import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, onSnapshot, query, where } from "firebase/firestore";

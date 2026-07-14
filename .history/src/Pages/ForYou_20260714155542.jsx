@@ -4,6 +4,7 @@ import Navlogo from "../assets/logo.png";
 import Selected from "../components/UI/Selected";
 import Recommended from "../components/UI/Recommended";
 import Suggested from "../components/UI/Suggested";
+import SearchInput from "../components/UI/SearchInput";
 
 const ForYou = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
