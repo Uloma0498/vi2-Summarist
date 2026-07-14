@@ -30,9 +30,8 @@ console.log(auth.currentUser);
   };
 
   const planLabels = {
-    premiumPlus: "Premium Plus",
-    premiumMonthly: "Premium",
-  };
+    
+  }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -50,7 +49,7 @@ console.log(auth.currentUser);
           <>
             <div className="setting__content">
               <div className="settings__sub--title">Your Subscription plan</div>
-              <div className="settings__text">{planLabels[selectedPlan] || "Basic"}</div>
+              <div className="settings__text">{selectedPlan || "Basic"}</div>
               <button
                 className="btn settings__login--btn"
                 onClick={handleUpgrade}

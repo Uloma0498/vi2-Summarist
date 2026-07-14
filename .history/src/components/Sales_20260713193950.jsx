@@ -32,8 +32,8 @@ const Sales = () => {
     };
 
   const priceIds = {
-  premiumPlus: "price_1Tst67GdbsGRY90H9zHRhVJE",
-  premiumMonthly: "price_1TsVYgGdbsGRY90HCx1bsH2H",
+  premiumPlus: "price_YEARLY_ID",
+  premiumMonthly: "price_MONTHLY_ID",
   };
 
   const handleCheckout = () => {
@@ -44,7 +44,7 @@ const Sales = () => {
     return;
   }
 
-  createCheckoutSession(priceIds[selectedPlan]);
+  createCheckoutSession(priceId);
 };
 
     return (
@@ -129,7 +129,8 @@ const Sales = () => {
               </div>
               <div className="plan__card--cta">
                 <span className="btn--wrapper">
-                 <button className="btn" onClick={handleCheckout}>
+                 <button className="btn" onClick={
+                }>
                   <span>{selectedPlan === "premiumPlus" ? "Start your free 7-day trial" : 
                                  selectedPlan === "premiumMonthly" ? "Start your first month" : 
                                  "Select a plan"}</span>

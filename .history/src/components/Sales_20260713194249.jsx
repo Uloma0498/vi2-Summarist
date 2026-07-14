@@ -32,7 +32,7 @@ const Sales = () => {
     };
 
   const priceIds = {
-  premiumPlus: "price_1Tst67GdbsGRY90H9zHRhVJE",
+  premiumPlus: "price_YEARLY_ID",
   premiumMonthly: "price_1TsVYgGdbsGRY90HCx1bsH2H",
   };
 
@@ -44,7 +44,7 @@ const Sales = () => {
     return;
   }
 
-  createCheckoutSession(priceIds[selectedPlan]);
+  createCheckoutSession(priceId);
 };
 
     return (

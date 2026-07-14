@@ -31,22 +31,6 @@ const Sales = () => {
         setOpenAccordion(openAccordion === index ? null : index);
     };
 
-  const priceIds = {
-  premiumPlus: "price_1Tst67GdbsGRY90H9zHRhVJE",
-  premiumMonthly: "price_1TsVYgGdbsGRY90HCx1bsH2H",
-  };
-
-  const handleCheckout = () => {
-  const priceId = priceIds[selectedPlan];
-
-  if (!priceId) {
-    alert("Please select a plan.");
-    return;
-  }
-
-  createCheckoutSession(priceIds[selectedPlan]);
-};
-
     return (
         <div className="wrapper wrapper__full">
          <div className="plan">
@@ -129,7 +113,9 @@ const Sales = () => {
               </div>
               <div className="plan__card--cta">
                 <span className="btn--wrapper">
-                 <button className="btn" onClick={handleCheckout}>
+                 <button className="btn" onClick={() =>
+                 createCheckoutSession{"price_1Tst67GdbsGRY90H9zHRhVJE")
+                }>
                   <span>{selectedPlan === "premiumPlus" ? "Start your free 7-day trial" : 
                                  selectedPlan === "premiumMonthly" ? "Start your first month" : 
                                  "Select a plan"}</span>

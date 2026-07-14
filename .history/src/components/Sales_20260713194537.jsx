@@ -44,7 +44,7 @@ const Sales = () => {
     return;
   }
 
-  createCheckoutSession(priceIds[selectedPlan]);
+  createCheckoutSession(priceId);
 };
 
     return (
