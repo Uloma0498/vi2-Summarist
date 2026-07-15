@@ -40,9 +40,8 @@ const Player = () => {
     }
 
     return () => unsubscribe();
-  }, [bookId, setIsLoggedIn]);
+  }, [bookId]);
 
-  const audio = audioRef.current;
   
   useEffect(() => {
     if (audio) {

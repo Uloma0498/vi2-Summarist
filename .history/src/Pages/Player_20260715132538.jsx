@@ -40,13 +40,14 @@ const Player = () => {
     }
 
     return () => unsubscribe();
-  }, [bookId, setIsLoggedIn]);
+  }, [bookId]);
 
-  const audio = audioRef.current;
   
   useEffect(() => {
-    if (audio) {
+    const audio = audioRef.current;
+    
       const handleLoadedMetadata = () => {
+        
         setDuration(audio.duration);
       };
 

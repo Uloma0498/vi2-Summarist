@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SidebarDesktop from "./SidebarDesktop";
 
 const SearchInput = ( {searchResult: searchResultProp} ) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -90,11 +89,7 @@ const SearchInput = ( {searchResult: searchResultProp} ) => {
         </div>
       </div>
     </div>
-    {isSidebarOpen && (
-      <div className="sidebar__content" ref={sidebarRef}>
-        <SidebarDesktop />
-      </div>
-    )}
+    {isSidebarOpen && (}
     {searchQuery && (
     <div className="search__books--wrapper">
         {searchResult.map((book) => (

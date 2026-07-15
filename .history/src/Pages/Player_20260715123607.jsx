@@ -10,7 +10,7 @@ const Player = () => {
   const { bookId } = useParams();
   const {setSidebarOpen} = useState(false);
   const [player, setPlayer] = useState(null);
-  const [isLogggedIn, setIsLoggedIn] = useState(false);
+  const {setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
   const sidebarRef = useRef(null);
@@ -43,7 +43,6 @@ const Player = () => {
   }, [bookId, setIsLoggedIn]);
 
   const audio = audioRef.current;
-  
   useEffect(() => {
     if (audio) {
       const handleLoadedMetadata = () => {

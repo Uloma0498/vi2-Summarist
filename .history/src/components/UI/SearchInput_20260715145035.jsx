@@ -93,6 +93,7 @@ const SearchInput = ( {searchResult: searchResultProp} ) => {
     {isSidebarOpen && (
       <div className="sidebar__content" ref={sidebarRef}>
         <SidebarDesktop />
+    
       </div>
     )}
     {searchQuery && (

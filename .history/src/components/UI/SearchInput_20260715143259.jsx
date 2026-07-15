@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SidebarDesktop from "./SidebarDesktop";
 
 const SearchInput = ( {searchResult: searchResultProp} ) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -36,17 +35,8 @@ const SearchInput = ( {searchResult: searchResultProp} ) => {
     }
 
     useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-          closeMenu();
-        }
-      };
-
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, []);
+      const 
+    })
 
   return (
     <>
@@ -90,11 +80,6 @@ const SearchInput = ( {searchResult: searchResultProp} ) => {
         </div>
       </div>
     </div>
-    {isSidebarOpen && (
-      <div className="sidebar__content" ref={sidebarRef}>
-        <SidebarDesktop />
-      </div>
-    )}
     {searchQuery && (
     <div className="search__books--wrapper">
         {searchResult.map((book) => (

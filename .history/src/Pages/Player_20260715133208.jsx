@@ -8,17 +8,13 @@ import SignIn from "../components/UI/SignIn";
 
 const Player = () => {
   const { bookId } = useParams();
-  const {setSidebarOpen} = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [player, setPlayer] = useState(null);
-  const [isLogggedIn, setIsLoggedIn] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
-  const sidebarRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const  {setAudioDurationSeconds} = useState(null);
-  
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -27,44 +23,39 @@ const Player = () => {
 
     const fetchPlayer = async () => {
       try {
-        const response = await axios.get(
-          `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`,
-        );
+        const response = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`);
         setPlayer(response.data);
       } catch (error) {
         console.error("Error fetching player details:", error);
       }
     };
+
     if (bookId) {
       fetchPlayer();
     }
 
     return () => unsubscribe();
-  }, [bookId, setIsLoggedIn]);
+  }, [bookId]);
 
-  const audio = audioRef.current;
-  
   useEffect(() => {
-    if (audio) {
-      const handleLoadedMetadata = () => {
+    const audio = audioRef.current;
+
+    const handleLoadedMetadata = () => {
+      if (audio) {
         setDuration(audio.duration);
-      };
+      }
+    };
 
-      const handleTimeUpdate = () => {
-        setCurrentTime(audio.currentTime);
-      };
-
+    if (audio) {
       audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.addEventListener("timeupdate", handleTimeUpdate);
-
       return () => {
         audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, [audio]);
+  }, [audioRef]);
 
   const handlePlayPause = () => {
+    const audio = audioRef.current;
     if (isPlaying) {
       audio.pause();
     } else {
@@ -73,57 +64,12 @@ const Player = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
-  };
-
-  const handleSeekChange = (event) => {
-    const newTime = event.target.value;
-    audioRef.current.currentTime = newTime;
-    setCurrentTime(newTime);
-  };
-
-  const handleForward = () => {
-    audioRef.current.currentTime += 10;
-  };
-
-  const handleBackward = () => {
-    audioRef.current.currentTime -= 10;
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setSidebarOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [setSidebarOpen]);
-
   const formatTime = (seconds) => {
     seconds = Math.max(0, seconds);
-
-    const minutes = Math.floor(seconds / 60)
-      .toString()
-      .padStart(2, "0");
-
-    const remainingSeconds = Math.floor(seconds % 60)
-      .toString()
-      .padStart(2, "0");
-
+    const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
+    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
     return `${minutes}:${remainingSeconds}`;
   };
-
-  function handleLoadedMetadata() {
-    setAudioDurationSeconds(audio.duration);
-    const audioDuration = formatTime(audio.duration);
-    setDuration(audioDuration);
-  }
-
   return (
     <>
       {player ? (

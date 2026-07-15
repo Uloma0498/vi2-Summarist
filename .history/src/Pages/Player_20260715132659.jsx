@@ -43,7 +43,6 @@ const Player = () => {
   }, [bookId, setIsLoggedIn]);
 
   const audio = audioRef.current;
-  
   useEffect(() => {
     if (audio) {
       const handleLoadedMetadata = () => {
