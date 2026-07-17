@@ -14,7 +14,7 @@ const Player = () => {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
   const sidebarRef = useRef(null);
-  const [, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const  [, setAudioDurationSeconds] = useState(null);
@@ -44,7 +44,7 @@ const Player = () => {
 
   
   useEffect(() => {
-    if (audioRef.current) {
+    if (audio) {
       function handleLoadedMetadata(event) {
       const audio = event.currentTarget;
 
@@ -53,11 +53,11 @@ const Player = () => {
       }
       
       const handleTimeUpdate = () => {
-      const audio = audioRef.current;
-      if (!audio) return;
+  const audio = audioRef.current;
+  if (!audio) return;
 
-     setCurrentTime(audio.currentTime);
-    };
+  setCurrentTime(audio.currentTime);
+};
 
       audio.addEventListener("loadedmetadata", handleLoadedMetadata);
       audio.addEventListener("timeupdate", handleTimeUpdate);
@@ -67,7 +67,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, []);
+  }, [audio]);
 
   const handlePlayPause = async () => {
   const audio = audioRef.current;
@@ -139,8 +139,8 @@ const handleBackward = () => {
   };
 
   function handleLoadedMetadata() {
-    setAudioDurationSeconds(audioRef.current.duration);
-    const audioDuration = formatTime(audioRef.current.duration);
+    setAudioDurationSeconds(audio.duration);
+    const audioDuration = formatTime(audio.duration);
     setDuration(audioDuration);
   }
 

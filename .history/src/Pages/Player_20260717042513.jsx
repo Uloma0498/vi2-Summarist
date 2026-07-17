@@ -58,14 +58,6 @@ const Player = () => {
 
      setCurrentTime(audio.currentTime);
     };
-
-      audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.addEventListener("timeupdate", handleTimeUpdate);
-
-      return () => {
-        audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        audio.removeEventListener("timeupdate", handleTimeUpdate);
-      };
     }
   }, []);
 
@@ -139,8 +131,7 @@ const handleBackward = () => {
   };
 
   function handleLoadedMetadata() {
-    setAudioDurationSeconds(audioRef.current.duration);
-    const audioDuration = formatTime(audioRef.current.duration);
+    const audioDuration = audioRef.current.duration;
     setDuration(audioDuration);
   }
 

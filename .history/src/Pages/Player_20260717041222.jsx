@@ -44,7 +44,7 @@ const Player = () => {
 
   
   useEffect(() => {
-    if (audioRef.current) {
+    if (audio) {
       function handleLoadedMetadata(event) {
       const audio = event.currentTarget;
 
@@ -67,7 +67,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, []);
+  }, [audio]);
 
   const handlePlayPause = async () => {
   const audio = audioRef.current;
@@ -139,8 +139,8 @@ const handleBackward = () => {
   };
 
   function handleLoadedMetadata() {
-    setAudioDurationSeconds(audioRef.current.duration);
-    const audioDuration = formatTime(audioRef.current.duration);
+    setAudioDurationSeconds(audio.duration);
+    const audioDuration = formatTime(audio.duration);
     setDuration(audioDuration);
   }
 

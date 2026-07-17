@@ -14,7 +14,7 @@ const Player = () => {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const audioRef = useRef(null);
   const sidebarRef = useRef(null);
-  const [, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const  [, setAudioDurationSeconds] = useState(null);
@@ -44,20 +44,14 @@ const Player = () => {
 
   
   useEffect(() => {
-    if (audioRef.current) {
-      function handleLoadedMetadata(event) {
-      const audio = event.currentTarget;
+    if (audio) {
+      const handleLoadedMetadata = () => {
+        setDuration(audio.duration);
+      };
 
-      setDuration(audio.duration);
-      setAudioDurationSeconds(audio.duration);
-      }
-      
       const handleTimeUpdate = () => {
-      const audio = audioRef.current;
-      if (!audio) return;
-
-     setCurrentTime(audio.currentTime);
-    };
+        setCurrentTime(audio.currentTime);
+      };
 
       audio.addEventListener("loadedmetadata", handleLoadedMetadata);
       audio.addEventListener("timeupdate", handleTimeUpdate);
@@ -67,7 +61,7 @@ const Player = () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
-  }, []);
+  }, [audio]);
 
   const handlePlayPause = async () => {
   const audio = audioRef.current;
@@ -102,15 +96,14 @@ const Player = () => {
   if (!audio) return;
 
   audio.currentTime += 10;
-  };
+};
 
 const handleBackward = () => {
   const audio = audioRef.current;
   if (!audio) return;
 
   audio.currentTime -= 10;
-  };
-
+};
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -139,8 +132,8 @@ const handleBackward = () => {
   };
 
   function handleLoadedMetadata() {
-    setAudioDurationSeconds(audioRef.current.duration);
-    const audioDuration = formatTime(audioRef.current.duration);
+    setAudioDurationSeconds(audio.duration);
+    const audioDuration = formatTime(audio.duration);
     setDuration(audioDuration);
   }
 
