@@ -16,6 +16,8 @@ const Player = () => {
   const sidebarRef = useRef(null);
   const [, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const  [, setAudioDurationSeconds] = useState(null);
   
 
   useEffect(() => {
@@ -106,6 +108,7 @@ const handleBackward = () => {
     return `${minutes}:${remainingSeconds}`;
   };
 
+
   return (
     <>
       {player ? (
@@ -186,8 +189,8 @@ const handleBackward = () => {
 
               <div className="audio__time">
                 {currentTime
-                  ? formatTime(audioRef.current?.duration - currentTime)
-                  : audioRef.current?.duration}
+                  ? formatTime(audio.duration - currentTime)
+                  : duration}
               </div>
             </div>
           </div>

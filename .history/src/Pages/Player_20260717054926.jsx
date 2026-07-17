@@ -16,6 +16,8 @@ const Player = () => {
   const sidebarRef = useRef(null);
   const [, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const  [, setAudioDurationSeconds] = useState(null);
   
 
   useEffect(() => {
@@ -40,6 +42,13 @@ const Player = () => {
     return () => unsubscribe();
   }, [bookId, setIsLoggedIn]);
 
+  
+function handleLoadedMetadata(event) {
+  const audio = event.currentTarget;
+
+  setDuration(audio.duration);
+  setAudioDurationSeconds(audio.duration);
+}
 
   const handlePlayPause = async () => {
   const audio = audioRef.current;
@@ -58,6 +67,10 @@ const Player = () => {
     setIsPlaying(false);
   }
 };
+
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
 
   const handleSeekChange = (event) => {
     const newTime = event.target.value;
@@ -104,6 +117,13 @@ const handleBackward = () => {
       .padStart(2, "0");
 
     return `${minutes}:${remainingSeconds}`;
+  };
+
+  function handleLoadedMetadata(event) {
+  const audio = event.currentTarget;
+
+  setDuration(audio.duration);
+  setAudioDurationSeconds(audio.duration);
   };
 
   return (
@@ -186,8 +206,8 @@ const handleBackward = () => {
 
               <div className="audio__time">
                 {currentTime
-                  ? formatTime(audioRef.current?.duration - currentTime)
-                  : audioRef.current?.duration}
+                  ? formatTime(audio.duration - currentTime)
+                  : duration}
               </div>
             </div>
           </div>
