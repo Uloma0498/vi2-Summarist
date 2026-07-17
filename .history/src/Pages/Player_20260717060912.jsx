@@ -16,8 +16,6 @@ const Player = () => {
   const sidebarRef = useRef(null);
   const [, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const  [, setAudioDurationSeconds] = useState(null);
   
 
   useEffect(() => {
@@ -43,7 +41,6 @@ const Player = () => {
   }, [bookId, setIsLoggedIn]);
 
 
-
   const handlePlayPause = async () => {
   const audio = audioRef.current;
 
@@ -61,10 +58,6 @@ const Player = () => {
     setIsPlaying(false);
   }
 };
-
-  const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
-  };
 
   const handleSeekChange = (event) => {
     const newTime = event.target.value;
@@ -113,13 +106,6 @@ const handleBackward = () => {
     return `${minutes}:${remainingSeconds}`;
   };
 
-  function handleLoadedMetadata(event) {
-  const audio = event.currentTarget;
-
-  setDuration(audio.duration);
-  setAudioDurationSeconds(audio.duration);
-  };
-
   return (
     <>
       {player ? (
@@ -134,8 +120,6 @@ const handleBackward = () => {
               ref={audioRef}
               src={player.audioLink}
               type="audio/mpeg"
-              onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
             />
 
             <div className="audio__track--wrapper">
@@ -202,7 +186,7 @@ const handleBackward = () => {
 
               <div className="audio__time">
                 {currentTime
-                  ? formatTime(audioRef.current?.duration - currentTime)
+                  ? formatTime(audioRef.duration - currentTime)
                   : duration}
               </div>
             </div>

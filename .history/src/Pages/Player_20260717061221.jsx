@@ -135,7 +135,6 @@ const handleBackward = () => {
               src={player.audioLink}
               type="audio/mpeg"
               onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
             />
 
             <div className="audio__track--wrapper">
@@ -202,7 +201,7 @@ const handleBackward = () => {
 
               <div className="audio__time">
                 {currentTime
-                  ? formatTime(audioRef.current?.duration - currentTime)
+                  ? formatTime(audio.duration - currentTime)
                   : duration}
               </div>
             </div>

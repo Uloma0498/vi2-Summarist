@@ -202,7 +202,7 @@ const handleBackward = () => {
 
               <div className="audio__time">
                 {currentTime
-                  ? formatTime(audioRef.current?.duration - currentTime)
+                  ? formatTime(audioR.duration - currentTime)
                   : duration}
               </div>
             </div>
